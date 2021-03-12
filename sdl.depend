@@ -1,0 +1,57 @@
+# depslib dependency file v1.0
+1615536055 source:c:\users\admin\desktop\codebinh\sdl\main.cpp
+	<iostream>
+	<ctime>
+	<stdlib.h>
+	<sstream>
+	<string>
+	"Variables.h"
+	"Constructor.h"
+	"GamePlay.h"
+
+1615453458 source:c:\users\admin\desktop\codebinh\sdl\baseobject.cpp
+
+1615539181 source:c:\users\admin\desktop\codebinh\sdl\button.cpp
+	"Variables.h"
+	<ctime>
+
+1615538047 c:\users\admin\desktop\codebinh\sdl\button.h
+	"Variables.h"
+
+1615538244 c:\users\admin\desktop\codebinh\sdl\variables.h
+	<SDL_mixer.h>
+	<sstream>
+	"Constances.h"
+	"Texture.h"
+	"Button.h"
+
+1615522747 c:\users\admin\desktop\codebinh\sdl\texture.h
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_ttf.h>
+	<cstring>
+
+1615522579 c:\users\admin\desktop\codebinh\sdl\constrances.h
+
+1615538504 source:c:\users\admin\desktop\codebinh\sdl\texture.cpp
+	"Variables.h"
+
+1615522579 c:\users\admin\desktop\codebinh\sdl\constances.h
+
+1615535208 source:c:\users\admin\desktop\codebinh\sdl\constructor.cpp
+	"Constructor.h"
+
+1615524462 c:\users\admin\desktop\codebinh\sdl\constructor.h
+	"Variables.h"
+
+1615539495 source:c:\users\admin\desktop\codebinh\sdl\gameplay.cpp
+	"GamePlay.h"
+	<ctime>
+
+1615531164 c:\users\admin\desktop\codebinh\sdl\gameplay.h
+	"Variables.h"
+
+1615536348 source:c:\users\admin\desktop\codebinh\sdl\variables.cpp
+	"Variables.h"
+
