@@ -55,3 +55,55 @@
 1615536348 source:c:\users\admin\desktop\codebinh\sdl\variables.cpp
 	"Variables.h"
 
+1617935329 source:g:\code\ltnc_btl\minersweeper\button.cpp
+	"Variables.h"
+	<ctime>
+
+1617935329 g:\code\ltnc_btl\minersweeper\variables.h
+	<SDL_mixer.h>
+	<sstream>
+	"Constances.h"
+	"Texture.h"
+	"Button.h"
+
+1618202402 g:\code\ltnc_btl\minersweeper\constances.h
+
+1617935329 g:\code\ltnc_btl\minersweeper\texture.h
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_ttf.h>
+	<cstring>
+
+1617935329 g:\code\ltnc_btl\minersweeper\button.h
+	"Variables.h"
+
+1617939493 source:g:\code\ltnc_btl\minersweeper\constructor.cpp
+	"Constructor.h"
+
+1617935329 g:\code\ltnc_btl\minersweeper\constructor.h
+	"Variables.h"
+
+1617939888 source:g:\code\ltnc_btl\minersweeper\gameplay.cpp
+	"GamePlay.h"
+	<ctime>
+
+1617935329 g:\code\ltnc_btl\minersweeper\gameplay.h
+	"Variables.h"
+
+1617939784 source:g:\code\ltnc_btl\minersweeper\main.cpp
+	<iostream>
+	<ctime>
+	<stdlib.h>
+	<sstream>
+	<string>
+	"Variables.h"
+	"Constructor.h"
+	"GamePlay.h"
+
+1617935329 source:g:\code\ltnc_btl\minersweeper\texture.cpp
+	"Variables.h"
+
+1617935329 source:g:\code\ltnc_btl\minersweeper\variables.cpp
+	"Variables.h"
+

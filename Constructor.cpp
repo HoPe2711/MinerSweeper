@@ -82,7 +82,7 @@ bool loadMedia()
     }
     else
     {
-        SDL_Color playAgainWin = { 30, 100, 100 };
+        SDL_Color playAgainWin = { 255, 255, 255 };
         if( !gPlayAgainWinTexture.loadFromRenderedText( "Press s to play again!", playAgainWin ) )
         {
             cout << "Failed to render text texture!\n";
@@ -112,7 +112,7 @@ bool loadMedia()
         success = false;
     }
 
-    if ( !gBackgroundTexture.loadFromFile( "Image/background.jfif" ) )
+    if ( !gBackgroundTexture.loadFromFile( "Image/background.jpg" ) )
     {
         cout << "Failed to load background texture!\n";
         success = false;

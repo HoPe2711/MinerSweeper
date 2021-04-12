@@ -36,7 +36,7 @@ void createTableWithMine ()
 
 bool checkWinning ()
 {
-    bool win = false;
+    bool win = true;
     if (countTileLeft == mineCount)
     {
         win = true;
