@@ -103,6 +103,48 @@ void LButton::handleEvent( SDL_Event* e )
 	}
 }
 
+bool LButton::handleEvent_( SDL_Event* e , int a, int b, int w, int h )
+{
+	//If mouse event happened
+	if( e->type == SDL_MOUSEBUTTONDOWN )
+	{
+		//Get mouse position
+		int x, y;
+		SDL_GetMouseState( &x, &y );
+
+		//Check if mouse is in button
+		bool inside = true;
+
+		//Mouse is left of the button
+		if( x < a )
+		{
+			inside = false;
+		}
+		//Mouse is right of the button
+		else if( x > w )
+		{
+			inside = false;
+		}
+		//Mouse above the button
+		else if( y < b )
+		{
+			inside = false;
+		}
+		//Mouse below the button
+		else if( y > h )
+		{
+			inside = false;
+		}
+
+		//Mouse is outside button
+		return inside;
+	}
+
+	return false;
+
+
+}
+
 void LButton::render(int i, int j)
 {
 	gButtonSpriteSheetTexture.render( mPosition.x, mPosition.y, &gSpriteClips[ sBoard[i][j] ] );

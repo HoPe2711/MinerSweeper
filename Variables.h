@@ -6,6 +6,7 @@
 #include "Texture.h"
 #include "Button.h"
 
+
 extern SDL_Window* gWindow;
 extern SDL_Renderer* gRenderer;
 
@@ -21,6 +22,13 @@ extern SDL_Rect stretchRect;
 extern SDL_Rect gSpriteClips[ BUTTON_SPRITE_TOTAL ];
 
 extern LTexture gButtonSpriteSheetTexture;
+extern LTexture gButtonNewGameMenu;
+extern LTexture gButtonMenu;
+extern LTexture gButtonBackground;
+extern LTexture gButtonHighScore;
+extern LTexture gButtonHighScoreName;
+extern LTexture gButtonDifficult;
+
 extern LTexture gWinningTexture;
 extern LTexture gBackgroundTexture;
 extern LTexture gTextTexture;
@@ -29,7 +37,7 @@ extern LTexture gPlayAgainWinTexture;
 extern LTexture gPlayAgainLoseTexture;
 
 extern LButton gButtons[rowSize][columnSize];
-
+extern LButton gButtons_;
 extern int countMineLeft;
 extern int countTileLeft;
 extern bool gameOver;

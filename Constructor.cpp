@@ -106,6 +106,31 @@ bool loadMedia()
         }
     }
 
+    if( !gButtonNewGameMenu.loadFromFile( "Image/MenuNewgame.jpg" ) )
+	{
+		printf( "Failed to load button sprite texture!\n" );
+		success = false;
+	}
+	if( !gButtonBackground.loadFromFile( "Image/background.jpg" )) {
+        printf( "Failed to load button menu\n ");
+        success = false;
+	}
+
+	if( !gButtonHighScore.loadFromFile( "Image/highscore.jpg" )) {
+        printf( "Failed to load button menu\n ");
+        success = false;
+	}
+
+	if( !gButtonHighScoreName.loadFromFile( "Image/name.jpg" )) {
+        printf( "Failed to load button menu\n ");
+        success = false;
+	}
+
+	if( !gButtonDifficult.loadFromFile( "Image/difficulty.jpg" )) {
+        printf( "Failed to load button menu\n ");
+        success = false;
+	}
+
     if ( !gWinningTexture.loadFromFile( "Image/Winner.png" ) )
     {
         cout << "Failed to load winning texture!\n";

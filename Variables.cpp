@@ -17,6 +17,12 @@ TTF_Font *font = NULL;
 
 SDL_Rect gSpriteClips[ BUTTON_SPRITE_TOTAL ];
 LTexture gButtonSpriteSheetTexture;
+LTexture gButtonNewGameMenu;
+LTexture gButtonMenu;
+LTexture gButtonBackground;
+LTexture gButtonHighScore;
+LTexture gButtonHighScoreName;
+LTexture gButtonDifficult;
 
 LTexture gWinningTexture;
 LTexture gBackgroundTexture;
@@ -26,6 +32,7 @@ LTexture gMineLeftTexture;
 LTexture gPlayAgainWinTexture;
 LTexture gPlayAgainLoseTexture;
 
+LButton gButtons_;
 int countMineLeft = mineCount;
 int countTileLeft = rowSize * columnSize;
 bool gameOver = false;

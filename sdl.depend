@@ -107,3 +107,60 @@
 1617935329 source:g:\code\ltnc_btl\minersweeper\variables.cpp
 	"Variables.h"
 
+1618800796 source:e:\code\code_codeblocks\practise_code\sdl\minersweeper\button.cpp
+	"Variables.h"
+	<ctime>
+
+1618805913 e:\code\code_codeblocks\practise_code\sdl\minersweeper\variables.h
+	<SDL_mixer.h>
+	<sstream>
+	"Constances.h"
+	"Texture.h"
+	"Button.h"
+
+1618634204 e:\code\code_codeblocks\practise_code\sdl\minersweeper\constances.h
+
+1618633711 e:\code\code_codeblocks\practise_code\sdl\minersweeper\texture.h
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_ttf.h>
+	<cstring>
+
+1618800837 e:\code\code_codeblocks\practise_code\sdl\minersweeper\button.h
+	"Variables.h"
+
+1618802058 source:e:\code\code_codeblocks\practise_code\sdl\minersweeper\constructor.cpp
+	"Constructor.h"
+
+1618633710 e:\code\code_codeblocks\practise_code\sdl\minersweeper\constructor.h
+	"Variables.h"
+
+1618639690 source:e:\code\code_codeblocks\practise_code\sdl\minersweeper\gameplay.cpp
+	"GamePlay.h"
+	<ctime>
+
+1618633710 e:\code\code_codeblocks\practise_code\sdl\minersweeper\gameplay.h
+	"Variables.h"
+
+1618805782 source:e:\code\code_codeblocks\practise_code\sdl\minersweeper\main.cpp
+	<iostream>
+	<ctime>
+	<stdlib.h>
+	<sstream>
+	<string>
+	"Variables.h"
+	"Constructor.h"
+	"GamePlay.h"
+	"GameMenu.h"
+
+1618633711 source:e:\code\code_codeblocks\practise_code\sdl\minersweeper\texture.cpp
+	"Variables.h"
+
+1618802864 source:e:\code\code_codeblocks\practise_code\sdl\minersweeper\variables.cpp
+	"Variables.h"
+
+1618805902 e:\code\code_codeblocks\practise_code\sdl\minersweeper\gamemenu.h
+	"Variables.h"
+	"GamePlay.h"
+
