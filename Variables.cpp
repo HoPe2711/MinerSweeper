@@ -23,6 +23,7 @@ LTexture gButtonBackground;
 LTexture gButtonHighScore;
 LTexture gButtonHighScoreName;
 LTexture gButtonDifficult;
+LTexture gButtonGameOver;
 
 LTexture gWinningTexture;
 LTexture gBackgroundTexture;
@@ -33,11 +34,11 @@ LTexture gPlayAgainWinTexture;
 LTexture gPlayAgainLoseTexture;
 
 LButton gButtons_;
-int countMineLeft = mineCount;
+int countMineLeft;
 int countTileLeft = rowSize * columnSize;
 bool gameOver = false;
 bool isWinning = false;
-
+int mineCount = 10;
 LButton gButtons[rowSize][columnSize];
 
 stringstream mineLeft;

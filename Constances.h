@@ -2,7 +2,6 @@
 
 const int TILE_SIZE = 32;
 const int BUTTON_SPRITE_TOTAL = 12;
-const int mineCount = 10;
 const int rowSize = 10;
 const int columnSize = 10;
 const int SCREEN_WIDTH = 640;

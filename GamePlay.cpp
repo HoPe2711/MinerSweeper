@@ -83,6 +83,9 @@ void flagManager()
             }
         }
         gPlayAgainLoseTexture.render( ( SCREEN_WIDTH - gPlayAgainLoseTexture.getWidth() ) / 2, SCREEN_HEIGHT - gPlayAgainLoseTexture.getHeight() );
+        SDL_RenderPresent( gRenderer );
+        SDL_Delay(3000);
+        gButtonGameOver.render(0, 0);
     }
 }
 
@@ -91,7 +94,7 @@ void playAgainManager(bool &quitGame)
     SDL_Event e;
     while( SDL_PollEvent( &e ) != 0 )
     {
-        if( e.key.keysym.sym == SDLK_s )
+        if( gButtons_.handleEvent_(&e, 228, 458, 412, 479) )
         {
             Mix_HaltMusic();
             countMineLeft = mineCount;
@@ -100,6 +103,6 @@ void playAgainManager(bool &quitGame)
             isWinning = false;
             quitGame = false;
         }
-        else if ( e.key.keysym.sym == SDLK_ESCAPE ) quitGame = true;
+        else if ( e.key.keysym.sym == SDLK_ESCAPE || e.type == SDL_QUIT ) quitGame = true;
     }
 }

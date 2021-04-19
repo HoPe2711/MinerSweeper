@@ -143,6 +143,12 @@ bool loadMedia()
         success = false;
     }
 
+    if ( !gButtonGameOver.loadFromFile( "Image/gameover.jpg" ) )
+    {
+        cout << "Failed to load background texture!\n";
+        success = false;
+    }
+
     if( !gButtonSpriteSheetTexture.loadFromFile( "Image/Tiles.png" ) )
     {
         cout << "Failed to load sprites texture!\n";

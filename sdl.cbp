@@ -37,6 +37,8 @@
 		<Unit filename="Constances.h" />
 		<Unit filename="Constructor.cpp" />
 		<Unit filename="Constructor.h" />
+		<Unit filename="GameMenu.cpp" />
+		<Unit filename="GameMenu.h" />
 		<Unit filename="GamePlay.cpp" />
 		<Unit filename="GamePlay.h" />
 		<Unit filename="Texture.cpp" />

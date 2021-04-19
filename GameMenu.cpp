@@ -76,16 +76,30 @@ void startGame()
             case 2:
                 if( prev == 1 )
                 {
+
                     if( gButtons_.handleEvent_(&e, 51, 584, 169, 611) )
                     {
                         ok = 1;
                         gButtonHighScoreName.render(0, 0);
 
                     }
-                    if( gButtons_.handleEvent_(&e, 468, 584, 588, 611))
-                    {
-                        ok = 3;
 
+                    if ( gButtons_.handleEvent_(&e, 200, 182, 439, 243)) {
+                        mineCount = 10;
+                        countMineLeft = mineCount;
+                        ok = 3;
+                    }
+
+                    if ( gButtons_.handleEvent_(&e, 200, 318, 439, 379) ) {
+                        mineCount = 15;
+                        countMineLeft = mineCount;
+                        ok = 3;
+                    }
+
+                    if ( gButtons_.handleEvent_(&e, 200, 448, 439, 510) ) {
+                        mineCount = 20;
+                        countMineLeft = mineCount;
+                        ok = 3;
                     }
                 }
                 break;

@@ -28,6 +28,7 @@ extern LTexture gButtonBackground;
 extern LTexture gButtonHighScore;
 extern LTexture gButtonHighScoreName;
 extern LTexture gButtonDifficult;
+extern LTexture gButtonGameOver;
 
 extern LTexture gWinningTexture;
 extern LTexture gBackgroundTexture;
@@ -36,13 +37,14 @@ extern LTexture gMineLeftTexture;
 extern LTexture gPlayAgainWinTexture;
 extern LTexture gPlayAgainLoseTexture;
 
+
 extern LButton gButtons[rowSize][columnSize];
 extern LButton gButtons_;
 extern int countMineLeft;
 extern int countTileLeft;
 extern bool gameOver;
 extern bool isWinning;
-
+extern int mineCount;
 extern stringstream mineLeft;
 
 extern int board[rowSize][columnSize];
