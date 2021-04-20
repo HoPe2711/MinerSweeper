@@ -1,10 +1,10 @@
 #include "GameMenu.h"
-void startGame()
+void startGame(bool &quit )
 {
-
-    bool quit = false;
+    quit = false;
     int ok = 0;
     int prev = 0;
+    playAgain = false;
     SDL_Event e;
 
     gButtonNewGameMenu.render(0, 0);
@@ -145,5 +145,7 @@ void startGame()
             SDL_RenderPresent( gRenderer );
         }
         playAgainManager( quit );
+
+        if(playAgain) break;
     }
 }

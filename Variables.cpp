@@ -38,6 +38,8 @@ int countMineLeft;
 int countTileLeft = rowSize * columnSize;
 bool gameOver = false;
 bool isWinning = false;
+bool playAgain = false;
+
 int mineCount = 10;
 LButton gButtons[rowSize][columnSize];
 

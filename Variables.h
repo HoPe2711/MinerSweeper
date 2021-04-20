@@ -45,6 +45,8 @@ extern int countTileLeft;
 extern bool gameOver;
 extern bool isWinning;
 extern int mineCount;
+extern bool playAgain;
+
 extern stringstream mineLeft;
 
 extern int board[rowSize][columnSize];

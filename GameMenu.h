@@ -4,7 +4,7 @@
 
 #include "Variables.h"
 #include "GamePlay.h"
-void startGame();
+void startGame(bool &quit);
 
 
 #endif // GAMEMENU_H_INCLUDED

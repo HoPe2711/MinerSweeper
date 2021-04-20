@@ -21,7 +21,11 @@ int main(int argc, char* argv[])
         }
         else
         {
-            startGame();
+            bool quit = false;
+            while(!quit) {
+
+                startGame(quit);
+            }
         }
     }
 
