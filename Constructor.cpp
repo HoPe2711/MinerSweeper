@@ -117,17 +117,17 @@ bool loadMedia()
 	}
 
 	if( !gButtonHighScore.loadFromFile( "Image/highscore.jpg" )) {
-        printf( "Failed to load button menu\n ");
+        printf( "Failed to load HighScore\n ");
         success = false;
 	}
 
 	if( !gButtonHighScoreName.loadFromFile( "Image/name.jpg" )) {
-        printf( "Failed to load button menu\n ");
+        printf( "Failed to load HighScoreName\n ");
         success = false;
 	}
 
 	if( !gButtonDifficult.loadFromFile( "Image/difficulty.jpg" )) {
-        printf( "Failed to load button menu\n ");
+        printf( "Failed to load Diffcult\n ");
         success = false;
 	}
 
@@ -145,13 +145,13 @@ bool loadMedia()
 
     if ( !gButtonGameOver.loadFromFile( "Image/gameover.jpg" ) )
     {
-        cout << "Failed to load background texture!\n";
+        cout << "Failed to load background GameOver!\n";
         success = false;
     }
 
     if( !gButtonSpriteSheetTexture.loadFromFile( "Image/Tiles.png" ) )
     {
-        cout << "Failed to load sprites texture!\n";
+        cout << "Failed to load Tiles!\n";
         success = false;
     }
     else

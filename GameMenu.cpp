@@ -34,8 +34,7 @@ void startGame(bool &quit )
                 }
                 else if (gButtons_.handleEvent_(&e, 203, 354, 437, 426))
                 {
-                    gButtonHighScore.render(0, 0);
-
+                    gButtonDifficult.render(0, 0);
                     ok = 1;
                     prev = 2;
                 }
@@ -55,7 +54,7 @@ void startGame(bool &quit )
                         gButtonNewGameMenu.render(0, 0);
                     }
 
-                    if(gButtons_.handleEvent_(&e, 476, 580, 604, 611))
+                    else if(gButtons_.handleEvent_(&e, 476, 580, 604, 611))
                     {
                         ok = 2;
                         gButtonDifficult.render(0, 0);
@@ -63,12 +62,29 @@ void startGame(bool &quit )
                     }
                 }
 
-                if( prev == 2 )
+                else if( prev == 2 )
                 {
-                    if (gButtons_.handleEvent_(&e, 42, 576, 158, 602))
+                    if (gButtons_.handleEvent_(&e, 51, 584, 169, 611))
                     {
                         ok = 0;
                         gButtonNewGameMenu.render(0, 0);
+                    }
+
+                    else if(gButtons_.handleEvent_(&e, 200, 182, 439, 243)) {
+                        ok = 2;
+                        prev = 2;
+                        gButtonHighScore.render(0, 0);
+
+                    }
+                    else if(gButtons_.handleEvent_(&e, 200, 318, 439, 379)) {
+                        ok = 2;
+                        prev = 2;
+                        gButtonHighScore.render(0, 0);
+                    }
+                    else if( gButtons_.handleEvent_(&e, 200, 448, 439, 510) ) {
+                        ok = 2;
+                        prev = 2;
+                        gButtonHighScore.render(0, 0);
                     }
                 }
 
@@ -84,22 +100,31 @@ void startGame(bool &quit )
 
                     }
 
-                    if ( gButtons_.handleEvent_(&e, 200, 182, 439, 243)) {
+                    else if ( gButtons_.handleEvent_(&e, 200, 182, 439, 243)) {
                         mineCount = 10;
                         countMineLeft = mineCount;
                         ok = 3;
                     }
 
-                    if ( gButtons_.handleEvent_(&e, 200, 318, 439, 379) ) {
+                    else if ( gButtons_.handleEvent_(&e, 200, 318, 439, 379) ) {
                         mineCount = 15;
                         countMineLeft = mineCount;
                         ok = 3;
                     }
 
-                    if ( gButtons_.handleEvent_(&e, 200, 448, 439, 510) ) {
+                    else if ( gButtons_.handleEvent_(&e, 200, 448, 439, 510) ) {
                         mineCount = 20;
                         countMineLeft = mineCount;
                         ok = 3;
+                    }
+                }
+
+                else if ( prev == 2 ) {
+                    if( gButtons_.handleEvent_(&e, 42, 576, 158, 602) )
+                    {
+                        ok = 1;
+                        gButtonDifficult.render(0, 0);
+
                     }
                 }
                 break;
