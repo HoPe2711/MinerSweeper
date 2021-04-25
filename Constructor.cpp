@@ -106,6 +106,109 @@ bool loadMedia()
         }
     }
 
+    // text highscore easy
+    gFont = TTF_OpenFont( "Font/DTM-Sans.ttf", 28 );
+	if( gFont == NULL )
+	{
+		printf( "Failed to load lazy font! SDL_ttf Error: %s\n", TTF_GetError() );
+		success = false;
+	}
+	else
+    {
+        string highscoreE[12];
+        ifstream file( "Highscore/easy.txt");
+        if( !file)
+        {
+            cout << "Can not open highscore data";
+        }
+        int count = 0;
+        while (!file.eof()){
+            string line;
+            getline(file, line);
+            if ( file)
+            {
+                highscoreE[count] = line;
+                count++;
+            }
+        }
+
+        SDL_Color textColor = { 255, 255, 255 };
+		if( !gTextTextureE0.loadFromRenderedText( highscoreE[0], textColor ) )
+		{
+			printf( "Failed to render text texture!\n" );
+			success = false;
+		}
+
+		if( !gTextTextureE1.loadFromRenderedText( highscoreE[1], textColor ) )
+		{
+			printf( "Failed to render text texture!\n" );
+			success = false;
+		}
+
+		if( !gTextTextureE2.loadFromRenderedText( highscoreE[2], textColor ) )
+		{
+			printf( "Failed to render text texture!\n" );
+			success = false;
+		}
+
+		if( !gTextTextureE3.loadFromRenderedText( highscoreE[3], textColor ) )
+		{
+			printf( "Failed to render text texture!\n" );
+			success = false;
+		}
+
+		if( !gTextTextureE4.loadFromRenderedText( highscoreE[4], textColor ) )
+		{
+			printf( "Failed to render text texture!\n" );
+			success = false;
+		}
+
+		if( !gTextTextureE5.loadFromRenderedText( highscoreE[5], textColor ) )
+		{
+			printf( "Failed to render text texture!\n" );
+			success = false;
+		}
+
+		if( !gTextTextureE6.loadFromRenderedText( highscoreE[6], textColor ) )
+		{
+			printf( "Failed to render text texture!\n" );
+			success = false;
+		}
+
+		if( !gTextTextureE7.loadFromRenderedText( highscoreE[7], textColor ) )
+		{
+			printf( "Failed to render text texture!\n" );
+			success = false;
+		}
+
+		if( !gTextTextureE8.loadFromRenderedText( highscoreE[8], textColor ) )
+		{
+			printf( "Failed to render text texture!\n" );
+			success = false;
+		}
+
+		if( !gTextTextureE9.loadFromRenderedText( highscoreE[9], textColor ) )
+		{
+			printf( "Failed to render text texture!\n" );
+			success = false;
+		}
+
+		if( !gTextTextureE10.loadFromRenderedText( highscoreE[10], textColor ) )
+		{
+			printf( "Failed to render text texture!\n" );
+			success = false;
+		}
+
+		if( !gTextTextureE11.loadFromRenderedText( highscoreE[11], textColor ) )
+		{
+			printf( "Failed to render text texture!\n" );
+			success = false;
+		}
+    }
+
+
+    //
+
     if( !gButtonNewGameMenu.loadFromFile( "Image/MenuNewgame.jpg" ) )
 	{
 		printf( "Failed to load button sprite texture!\n" );
@@ -122,6 +225,11 @@ bool loadMedia()
 	}
 
 	if( !gButtonHighScoreName.loadFromFile( "Image/name.jpg" )) {
+        printf( "Failed to load HighScoreName\n ");
+        success = false;
+	}
+
+	if( !gButtonHighscoreDiff.loadFromFile( "Image/highscore_diff.jpg" )) {
         printf( "Failed to load HighScoreName\n ");
         success = false;
 	}
@@ -203,13 +311,28 @@ void close()
     gBackgroundTexture.free();
     gWinningTexture.free();
     gTextTexture.free();
+    gTextTextureE0.free();
+    gTextTextureE1.free();
+    gTextTextureE2.free();
+    gTextTextureE3.free();
+    gTextTextureE4.free();
+    gTextTextureE5.free();
+    gTextTextureE6.free();
+    gTextTextureE7.free();
+    gTextTextureE8.free();
+    gTextTextureE9.free();
+    gTextTextureE10.free();
+    gTextTextureE11.free();
 
     TTF_CloseFont( gGameOver );
     TTF_CloseFont( gPlayAgainLose );
     TTF_CloseFont( gPlayAgainWin );
+    TTF_CloseFont( gFont );
+
     gGameOver = NULL;
     gPlayAgainLose = NULL;
     gPlayAgainWin = NULL;
+    gFont = NULL;
 
     Mix_FreeMusic( winner );
     Mix_FreeMusic( loser );

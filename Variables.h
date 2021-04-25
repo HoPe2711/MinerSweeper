@@ -2,10 +2,10 @@
 
 #include <SDL_mixer.h>
 #include <sstream>
+#include <fstream>
 #include "Constances.h"
 #include "Texture.h"
 #include "Button.h"
-
 
 extern SDL_Window* gWindow;
 extern SDL_Renderer* gRenderer;
@@ -17,6 +17,7 @@ extern Mix_Chunk *click;
 extern TTF_Font *gGameOver;
 extern TTF_Font *gPlayAgainWin;
 extern TTF_Font *gPlayAgainLose;
+extern TTF_Font *gFont;
 
 extern SDL_Rect stretchRect;
 extern SDL_Rect gSpriteClips[ BUTTON_SPRITE_TOTAL ];
@@ -27,12 +28,25 @@ extern LTexture gButtonMenu;
 extern LTexture gButtonBackground;
 extern LTexture gButtonHighScore;
 extern LTexture gButtonHighScoreName;
+extern LTexture gButtonHighscoreDiff;
 extern LTexture gButtonDifficult;
 extern LTexture gButtonGameOver;
 
 extern LTexture gWinningTexture;
 extern LTexture gBackgroundTexture;
 extern LTexture gTextTexture;
+extern LTexture gTextTextureE0;
+extern LTexture gTextTextureE1;
+extern LTexture gTextTextureE2;
+extern LTexture gTextTextureE3;
+extern LTexture gTextTextureE4;
+extern LTexture gTextTextureE5;
+extern LTexture gTextTextureE6;
+extern LTexture gTextTextureE7;
+extern LTexture gTextTextureE8;
+extern LTexture gTextTextureE9;
+extern LTexture gTextTextureE10;
+extern LTexture gTextTextureE11;
 extern LTexture gMineLeftTexture;
 extern LTexture gPlayAgainWinTexture;
 extern LTexture gPlayAgainLoseTexture;

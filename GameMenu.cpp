@@ -1,4 +1,22 @@
 #include "GameMenu.h"
+
+
+void renderTextHighScoreE()
+{
+    gTextTextureE0.render(xNamePos, yPos0);
+    gTextTextureE1.render(xTimePos, yPos0);
+    gTextTextureE2.render(xNamePos, yPos1);
+    gTextTextureE3.render(xTimePos, yPos1);
+    gTextTextureE4.render(xNamePos, yPos2);
+    gTextTextureE5.render(xTimePos, yPos2);
+    gTextTextureE6.render(xNamePos, yPos3);
+    gTextTextureE7.render(xTimePos, yPos3);
+    gTextTextureE8.render(xNamePos, yPos4);
+    gTextTextureE9.render(xTimePos, yPos4);
+    gTextTextureE10.render(xNamePos, yPos5);
+    gTextTextureE11.render(xTimePos, yPos5);
+}
+
 void startGame(bool &quit )
 {
     quit = false;
@@ -34,7 +52,7 @@ void startGame(bool &quit )
                 }
                 else if (gButtons_.handleEvent_(&e, 203, 354, 437, 426))
                 {
-                    gButtonDifficult.render(0, 0);
+                    gButtonHighscoreDiff.render(0, 0);
                     ok = 1;
                     prev = 2;
                 }
@@ -74,7 +92,7 @@ void startGame(bool &quit )
                         ok = 2;
                         prev = 2;
                         gButtonHighScore.render(0, 0);
-
+                        renderTextHighScoreE();
                     }
                     else if(gButtons_.handleEvent_(&e, 200, 318, 439, 379)) {
                         ok = 2;

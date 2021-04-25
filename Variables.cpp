@@ -13,7 +13,7 @@ Mix_Chunk *click = NULL;
 TTF_Font *gGameOver = NULL;
 TTF_Font *gPlayAgainWin = NULL;
 TTF_Font *gPlayAgainLose = NULL;
-TTF_Font *font = NULL;
+TTF_Font *gFont = NULL;
 
 SDL_Rect gSpriteClips[ BUTTON_SPRITE_TOTAL ];
 LTexture gButtonSpriteSheetTexture;
@@ -22,6 +22,7 @@ LTexture gButtonMenu;
 LTexture gButtonBackground;
 LTexture gButtonHighScore;
 LTexture gButtonHighScoreName;
+LTexture gButtonHighscoreDiff;
 LTexture gButtonDifficult;
 LTexture gButtonGameOver;
 
@@ -29,6 +30,18 @@ LTexture gWinningTexture;
 LTexture gBackgroundTexture;
 
 LTexture gTextTexture;
+LTexture gTextTextureE0;
+LTexture gTextTextureE1;
+LTexture gTextTextureE2;
+LTexture gTextTextureE3;
+LTexture gTextTextureE4;
+LTexture gTextTextureE5;
+LTexture gTextTextureE6;
+LTexture gTextTextureE7;
+LTexture gTextTextureE8;
+LTexture gTextTextureE9;
+LTexture gTextTextureE10;
+LTexture gTextTextureE11;
 LTexture gMineLeftTexture;
 LTexture gPlayAgainWinTexture;
 LTexture gPlayAgainLoseTexture;
