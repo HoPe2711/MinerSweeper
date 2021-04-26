@@ -106,7 +106,7 @@ bool loadMedia()
         }
     }
 
-    // text highscore easy
+    // text highscore
     gFont = TTF_OpenFont( "Font/DTM-Sans.ttf", 28 );
 	if( gFont == NULL )
 	{
@@ -115,97 +115,88 @@ bool loadMedia()
 	}
 	else
     {
+        // highscore easy
         string highscoreE[12];
-        ifstream file( "Highscore/easy.txt");
-        if( !file)
+        ifstream fileE( "Highscore/easy.txt");
+        if(!fileE)
         {
             cout << "Can not open highscore data";
         }
-        int count = 0;
-        while (!file.eof()){
+        int countE = 0;
+        while (!fileE.eof()){
             string line;
-            getline(file, line);
-            if ( file)
+            getline(fileE, line);
+            if (fileE)
             {
-                highscoreE[count] = line;
-                count++;
+                highscoreE[countE] = line;
+                countE++;
             }
         }
 
         SDL_Color textColor = { 255, 255, 255 };
-		if( !gTextTextureE0.loadFromRenderedText( highscoreE[0], textColor ) )
-		{
-			printf( "Failed to render text texture!\n" );
-			success = false;
-		}
+		for(int i = 0; i < 12; i++)
+        {
+            if( !gTextTextureE[i].loadFromRenderedText( highscoreE[i], textColor ) )
+            {
+                cerr << "Failed to render text texture!\n";
+                success = false;
+            }
+        }
 
-		if( !gTextTextureE1.loadFromRenderedText( highscoreE[1], textColor ) )
-		{
-			printf( "Failed to render text texture!\n" );
-			success = false;
-		}
+		// highscore medium
+		string highscoreM[12];
+        ifstream fileM( "Highscore/medium.txt");
+        if( !fileM)
+        {
+            cout << "Can not open highscore data";
+        }
+        int countM = 0;
+        while (!fileM.eof()){
+            string line;
+            getline(fileM, line);
+            if (fileM)
+            {
+                highscoreM[countM] = line;
+                countM++;
+            }
+        }
 
-		if( !gTextTextureE2.loadFromRenderedText( highscoreE[2], textColor ) )
-		{
-			printf( "Failed to render text texture!\n" );
-			success = false;
-		}
+        for(int i = 0; i < 12; i++)
+        {
+            if( !gTextTextureM[i].loadFromRenderedText( highscoreM[i], textColor ) )
+            {
+                cerr << "Failed to render text texture!\n";
+                success = false;
+            }
+        }
 
-		if( !gTextTextureE3.loadFromRenderedText( highscoreE[3], textColor ) )
-		{
-			printf( "Failed to render text texture!\n" );
-			success = false;
-		}
+        // highscore hard
+		string highscoreH[12];
+        ifstream fileH( "Highscore/hard.txt");
+        if(!fileH)
+        {
+            cout << "Can not open highscore data";
+        }
+        int countH = 0;
+        while (!fileH.eof()){
+            string line;
+            getline(fileH, line);
+            if (fileH)
+            {
+                highscoreH[countH] = line;
+                countH++;
+            }
+        }
 
-		if( !gTextTextureE4.loadFromRenderedText( highscoreE[4], textColor ) )
-		{
-			printf( "Failed to render text texture!\n" );
-			success = false;
-		}
-
-		if( !gTextTextureE5.loadFromRenderedText( highscoreE[5], textColor ) )
-		{
-			printf( "Failed to render text texture!\n" );
-			success = false;
-		}
-
-		if( !gTextTextureE6.loadFromRenderedText( highscoreE[6], textColor ) )
-		{
-			printf( "Failed to render text texture!\n" );
-			success = false;
-		}
-
-		if( !gTextTextureE7.loadFromRenderedText( highscoreE[7], textColor ) )
-		{
-			printf( "Failed to render text texture!\n" );
-			success = false;
-		}
-
-		if( !gTextTextureE8.loadFromRenderedText( highscoreE[8], textColor ) )
-		{
-			printf( "Failed to render text texture!\n" );
-			success = false;
-		}
-
-		if( !gTextTextureE9.loadFromRenderedText( highscoreE[9], textColor ) )
-		{
-			printf( "Failed to render text texture!\n" );
-			success = false;
-		}
-
-		if( !gTextTextureE10.loadFromRenderedText( highscoreE[10], textColor ) )
-		{
-			printf( "Failed to render text texture!\n" );
-			success = false;
-		}
-
-		if( !gTextTextureE11.loadFromRenderedText( highscoreE[11], textColor ) )
-		{
-			printf( "Failed to render text texture!\n" );
-			success = false;
-		}
+        for(int i = 0; i < 12; i++)
+        {
+            if( !gTextTextureH[i].loadFromRenderedText( highscoreH[i], textColor ) )
+            {
+                cerr << "Failed to render text texture!\n";
+                success = false;
+            }
+        }
     }
-
 
     //
 
@@ -311,18 +302,18 @@ void close()
     gBackgroundTexture.free();
     gWinningTexture.free();
     gTextTexture.free();
-    gTextTextureE0.free();
-    gTextTextureE1.free();
-    gTextTextureE2.free();
-    gTextTextureE3.free();
-    gTextTextureE4.free();
-    gTextTextureE5.free();
-    gTextTextureE6.free();
-    gTextTextureE7.free();
-    gTextTextureE8.free();
-    gTextTextureE9.free();
-    gTextTextureE10.free();
-    gTextTextureE11.free();
+    for(int i = 0; i < 12; i++)
+    {
+        gTextTextureE[i].free();
+    }
+    for(int i = 0; i < 12; i++)
+    {
+        gTextTextureM[i].free();
+    }
+    for(int i = 0; i < 12; i++)
+    {
+        gTextTextureH[i].free();
+    }
 
     TTF_CloseFont( gGameOver );
     TTF_CloseFont( gPlayAgainLose );
