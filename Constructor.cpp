@@ -302,6 +302,16 @@ void close()
     gBackgroundTexture.free();
     gWinningTexture.free();
     gTextTexture.free();
+    gButtonBackground.free();
+    gButtonDifficult.free();
+    gButtonGameOver.free();
+    gButtonHighScore.free();
+    gButtonHighscoreDiff.free();
+    gButtonHighScoreName.free();
+    gButtonMenu.free();
+    gButtonNewGameMenu.free();
+
+
     for(int i = 0; i < 12; i++)
     {
         gTextTextureE[i].free();
