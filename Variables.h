@@ -7,6 +7,7 @@
 #include "Constances.h"
 #include "Texture.h"
 #include "Button.h"
+#include "thread"
 
 extern SDL_Window* gWindow;
 extern SDL_Renderer* gRenderer;

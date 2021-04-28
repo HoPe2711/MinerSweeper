@@ -3,9 +3,15 @@
 #include <chrono>
 #include <thread>
 
-using namespace std::this_thread;
-using namespace std::chrono_literals;
-using std::chrono::system_clock;
+bool quit1 = false;
+
+void count_time(int test_time){
+    while (!gameOver && !isWinning && !quit1){
+        cout << test_time << endl;
+        ++test_time;
+        SDL_Delay(1000);
+    }
+}
 
 void startGame(bool &quit )
 {
@@ -149,24 +155,20 @@ void startGame(bool &quit )
         if( ok == 3 ) break;
         SDL_RenderPresent( gRenderer );
     }
+
     while( !quit )
     {
-//        int test_time = 0;
-
+        thread highscore(count_time, 0);
         createTableWithMine();
         while ( !gameOver && !quit && !isWinning)
         {
-//            sleep_for(10ns);
-//            sleep_until(system_clock::now() + 1s);
-//            cout << test_time << endl;
-//            ++test_time;
 
             while( SDL_PollEvent( &e ) != 0 )
             {
-
                 if( e.type == SDL_QUIT || e.key.keysym.sym == SDLK_ESCAPE)
                 {
                     quit = true;
+                    quit1 = true;
                 }
                 for (int i = 0; i < rowSize; i++)
                 {
@@ -193,6 +195,8 @@ void startGame(bool &quit )
             SDL_RenderPresent( gRenderer );
 
         }
+        highscore.join();
+
         playAgainManager( quit );
 
         if(playAgain) break;
