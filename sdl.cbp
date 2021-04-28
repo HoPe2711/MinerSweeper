@@ -41,6 +41,8 @@
 		<Unit filename="GameMenu.h" />
 		<Unit filename="GamePlay.cpp" />
 		<Unit filename="GamePlay.h" />
+		<Unit filename="Highscore.cpp" />
+		<Unit filename="Highscore.h" />
 		<Unit filename="Texture.cpp" />
 		<Unit filename="Texture.h" />
 		<Unit filename="Variables.cpp" />

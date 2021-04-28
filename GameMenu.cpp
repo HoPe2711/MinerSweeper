@@ -1,5 +1,11 @@
 #include "GameMenu.h"
 #include "Highscore.h"
+#include <chrono>
+#include <thread>
+
+using namespace std::this_thread;
+using namespace std::chrono_literals;
+using std::chrono::system_clock;
 
 void startGame(bool &quit )
 {
@@ -39,6 +45,7 @@ void startGame(bool &quit )
                     gButtonHighscoreDiff.render(0, 0);
                     ok = 1;
                     prev = 2;
+
                 }
                 else if (gButtons_.handleEvent_(&e, 203, 480, 437, 552))
                 {
@@ -105,21 +112,21 @@ void startGame(bool &quit )
                     }
                     //easy
                     else if ( gButtons_.handleEvent_(&e, 200, 182, 439, 243)) {
-                        diff = 0;
+
                         mineCount = 10;
                         countMineLeft = mineCount;
                         ok = 3;
                     }
                     //medium
                     else if ( gButtons_.handleEvent_(&e, 200, 318, 439, 379) ) {
-                        diff = 1;
+
                         mineCount = 15;
                         countMineLeft = mineCount;
                         ok = 3;
                     }
                     //hard
                     else if ( gButtons_.handleEvent_(&e, 200, 448, 439, 510) ) {
-                        diff = 2;
+
                         mineCount = 20;
                         countMineLeft = mineCount;
                         ok = 3;
@@ -149,6 +156,8 @@ void startGame(bool &quit )
         createTableWithMine();
         while ( !gameOver && !quit && !isWinning)
         {
+//            sleep_for(10ns);
+//            sleep_until(system_clock::now() + 1s);
 //            cout << test_time << endl;
 //            ++test_time;
 
@@ -182,7 +191,7 @@ void startGame(bool &quit )
             mineManager();
             flagManager();
             SDL_RenderPresent( gRenderer );
-//            SDL_Delay(1000);
+
         }
         playAgainManager( quit );
 

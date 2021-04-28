@@ -115,86 +115,59 @@ bool loadMedia()
 	}
 	else
     {
+        SDL_Color textColor = { 255, 255, 255 };
+
         // highscore easy
-        string highscoreE[12];
-        ifstream fileE( "Highscore/easy.txt");
-        if(!fileE)
-        {
-            cout << "Can not open highscore data";
-        }
+        getHighscoreE();
         int countE = 0;
-        while (!fileE.eof()){
-            string line;
-            getline(fileE, line);
-            if (fileE)
+		for(int i = 0; i < 18; i++)
+        {
+            if(i % 3 != 2)
             {
-                highscoreE[countE] = line;
+
+                if( !gTextTextureE[countE].loadFromRenderedText( highscoreE[i], textColor ) )
+                {
+                    cout << "Failed to render highscore easy!\n";
+                    success = false;
+                }
                 countE++;
             }
-        }
 
-        SDL_Color textColor = { 255, 255, 255 };
-		for(int i = 0; i < 12; i++)
-        {
-            if( !gTextTextureE[i].loadFromRenderedText( highscoreE[i], textColor ) )
-            {
-                cerr << "Failed to render text texture!\n";
-                success = false;
-            }
         }
 
 		// highscore medium
-		string highscoreM[12];
-        ifstream fileM( "Highscore/medium.txt");
-        if( !fileM)
-        {
-            cout << "Can not open highscore data";
-        }
+        getHighscoreM();
         int countM = 0;
-        while (!fileM.eof()){
-            string line;
-            getline(fileM, line);
-            if (fileM)
+		for(int i = 0; i < 18; i++)
+        {
+            if(i % 3 != 2)
             {
-                highscoreM[countM] = line;
+
+                if( !gTextTextureM[countM].loadFromRenderedText( highscoreM[i], textColor ) )
+                {
+                    cout << "Failed to render highscore medium!\n";
+                    success = false;
+                }
                 countM++;
             }
-        }
 
-        for(int i = 0; i < 12; i++)
-        {
-            if( !gTextTextureM[i].loadFromRenderedText( highscoreM[i], textColor ) )
-            {
-                cerr << "Failed to render text texture!\n";
-                success = false;
-            }
         }
 
         // highscore hard
-		string highscoreH[12];
-        ifstream fileH( "Highscore/hard.txt");
-        if(!fileH)
-        {
-            cout << "Can not open highscore data";
-        }
+		getHighscoreH();
         int countH = 0;
-        while (!fileH.eof()){
-            string line;
-            getline(fileH, line);
-            if (fileH)
+		for(int i = 0; i < 18; i++)
+        {
+            if(i % 3 != 2)
             {
-                highscoreH[countH] = line;
+                if( !gTextTextureH[countH].loadFromRenderedText( highscoreH[i], textColor ) )
+                {
+                    cout << "Failed to render highscore hard!\n";
+                    success = false;
+                }
                 countH++;
             }
-        }
 
-        for(int i = 0; i < 12; i++)
-        {
-            if( !gTextTextureH[i].loadFromRenderedText( highscoreH[i], textColor ) )
-            {
-                cerr << "Failed to render text texture!\n";
-                success = false;
-            }
         }
     }
 

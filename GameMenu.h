@@ -4,6 +4,7 @@
 
 #include "Variables.h"
 #include "GamePlay.h"
+
 void startGame(bool &quit);
 
 

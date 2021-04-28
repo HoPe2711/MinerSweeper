@@ -1,5 +1,68 @@
 #include "Highscore.h"
 
+void getHighscoreE()
+{
+    ifstream fileE( "Highscore/easy.txt");
+    if(!fileE)
+    {
+        cout << "Can not open highscore data";
+    }
+    int countE = 0;
+    while (!fileE.eof()){
+        string line;
+        getline(fileE, line);
+        if (fileE)
+        {
+            highscoreE[countE] = line;
+            countE++;
+        }
+    }
+
+    fileE.close();
+}
+
+void getHighscoreM()
+{
+    ifstream fileM( "Highscore/medium.txt");
+    if(!fileM)
+    {
+        cout << "Can not open highscore data";
+    }
+    int countM = 0;
+    while (!fileM.eof()){
+        string line;
+        getline(fileM, line);
+        if (fileM)
+        {
+            highscoreM[countM] = line;
+            countM++;
+        }
+    }
+
+    fileM.close();
+}
+
+void getHighscoreH()
+{
+    ifstream fileH( "Highscore/hard.txt");
+    if(!fileH)
+    {
+        cout << "Can not open highscore data";
+    }
+    int countH = 0;
+    while (!fileH.eof()){
+        string line;
+        getline(fileH, line);
+        if (fileH)
+        {
+            highscoreH[countH] = line;
+            countH++;
+        }
+    }
+
+    fileH.close();
+}
+
 void renderTextHighScoreE()
 {
     gTextTextureE[0].render(xNamePos, yPos0);
