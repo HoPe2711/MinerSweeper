@@ -59,10 +59,11 @@
 	"Variables.h"
 	<ctime>
 
-1619446066 g:\code\ltnc_btl\minersweeper\variables.h
+1619517768 g:\code\ltnc_btl\minersweeper\variables.h
 	<SDL_mixer.h>
 	<sstream>
 	<fstream>
+	<time.h>
 	"Constances.h"
 	"Texture.h"
 	"Button.h"
@@ -79,17 +80,17 @@
 1618808528 g:\code\ltnc_btl\minersweeper\button.h
 	"Variables.h"
 
-1619429919 source:g:\code\ltnc_btl\minersweeper\constructor.cpp
+1619516229 source:g:\code\ltnc_btl\minersweeper\constructor.cpp
 	"Constructor.h"
 
 1618588935 g:\code\ltnc_btl\minersweeper\constructor.h
 	"Variables.h"
 
-1618917387 source:g:\code\ltnc_btl\minersweeper\gameplay.cpp
+1619574436 source:g:\code\ltnc_btl\minersweeper\gameplay.cpp
 	"GamePlay.h"
 	<ctime>
 
-1618588935 g:\code\ltnc_btl\minersweeper\gameplay.h
+1619516219 g:\code\ltnc_btl\minersweeper\gameplay.h
 	"Variables.h"
 
 1618917387 source:g:\code\ltnc_btl\minersweeper\main.cpp
@@ -106,7 +107,7 @@
 1618588935 source:g:\code\ltnc_btl\minersweeper\texture.cpp
 	"Variables.h"
 
-1619429899 source:g:\code\ltnc_btl\minersweeper\variables.cpp
+1619517768 source:g:\code\ltnc_btl\minersweeper\variables.cpp
 	"Variables.h"
 
 1619510943 source:e:\code\code_codeblocks\practise_code\sdl\minersweeper\button.cpp
@@ -170,10 +171,16 @@
 1619510943 source:e:\code\code_codeblocks\practise_code\sdl\minersweeper\gamemenu.cpp
 	"GameMenu.h"
 
-1619429899 source:g:\code\ltnc_btl\minersweeper\gamemenu.cpp
+1619574424 source:g:\code\ltnc_btl\minersweeper\gamemenu.cpp
 	"GameMenu.h"
 
-1618917387 g:\code\ltnc_btl\minersweeper\gamemenu.h
+1619516219 g:\code\ltnc_btl\minersweeper\gamemenu.h
 	"Variables.h"
 	"GamePlay.h"
+
+1619600392 source:g:\code\ltnc_btl\minersweeper\highscore.cpp
+	"Highscore.h"
+
+1619600392 g:\code\ltnc_btl\minersweeper\highscore.h
+	"Variables.h"
 

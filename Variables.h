@@ -3,6 +3,7 @@
 #include <SDL_mixer.h>
 #include <sstream>
 #include <fstream>
+#include <time.h>
 #include "Constances.h"
 #include "Texture.h"
 #include "Button.h"
@@ -47,10 +48,12 @@ extern LButton gButtons[rowSize][columnSize];
 extern LButton gButtons_;
 extern int countMineLeft;
 extern int countTileLeft;
+extern int diff;
 extern bool gameOver;
 extern bool isWinning;
 extern int mineCount;
 extern bool playAgain;
+extern time_t start_t, end_t;
 
 extern stringstream mineLeft;
 

@@ -59,15 +59,39 @@ void mineManager()
     }
 }
 
+string convertTime(int time){
+    int minute = time / 60;
+    int sec = time % 60;
+    string Stime = "";
+    if(sec < 10)
+    {
+        Stime = to_string(minute) + ":0" + to_string(sec);
+    }
+    else
+    {
+        Stime = to_string(minute) + ":" + to_string(sec);
+    }
+
+    return Stime;
+}
+
 void flagManager()
 {
-    if ( isWinning && !gameOver )
+    if ( isWinning && !gameOver)
     {
         SDL_RenderPresent( gRenderer );
         SDL_Delay(500);
         Mix_PlayMusic(winner, 0);
         gWinningTexture.render( 0, 0 , &stretchRect );
         //gPlayAgainWinTexture.render( ( SCREEN_WIDTH - gPlayAgainWinTexture.getWidth() ) / 2, SCREEN_HEIGHT - gPlayAgainWinTexture.getHeight() );
+
+        // nhap vao highscore
+//        if( diff == 0)
+//        {
+//            ofstream outfileE("outfileE.txt");
+//            outfileE << Stime << " " << time_taken << endl;
+//            outfileE.close();
+//        }
     }
 
     if ( gameOver )
@@ -82,7 +106,7 @@ void flagManager()
                 gButtons[i][j].render(i, j);
             }
         }
-        //gPlayAgainLoseTexture.render( ( SCREEN_WIDTH - gPlayAgainLoseTexture.getWidth() ) / 2, SCREEN_HEIGHT - gPlayAgainLoseTexture.getHeight() );
+        //gPlayAgainLoseTexture.render( ( SCREEN_WIDTH - gPlayAgainLoseTextu    re.getWidth() ) / 2, SCREEN_HEIGHT - gPlayAgainLoseTexture.getHeight() );
         SDL_RenderPresent( gRenderer );
         SDL_Delay(3000);
         gButtonGameOver.render(0, 0);
@@ -103,7 +127,6 @@ void playAgainManager(bool &quitGame)
             isWinning = false;
             quitGame = false;
             playAgain = true;
-
         }
         else if ( e.key.keysym.sym == SDLK_ESCAPE || e.type == SDL_QUIT ) quitGame = true;
     }

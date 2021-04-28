@@ -39,10 +39,12 @@ LTexture gPlayAgainLoseTexture;
 
 LButton gButtons_;
 int countMineLeft;
+int diff;
 int countTileLeft = rowSize * columnSize;
 bool gameOver = false;
 bool isWinning = false;
 bool playAgain = false;
+time_t start_t, end_t;
 
 int mineCount = 10;
 LButton gButtons[rowSize][columnSize];
