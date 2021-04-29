@@ -60,7 +60,7 @@ extern int globalTime;
 extern stringstream mineLeft;
 extern string highscoreE[12];
 extern string highscoreM[12];
-extern string highscoreH[18];
+extern string highscoreH[12];
 extern int valueTimeE[6];
 extern int valueTimeM[6];
 extern int valueTimeH[6];

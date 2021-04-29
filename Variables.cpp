@@ -54,7 +54,7 @@ stringstream mineLeft;
 string highscoreE[12];
 string highscoreM[12];
 // bug highscoreH
-string highscoreH[18];
+string highscoreH[12];
 int valueTimeE[6];
 int valueTimeM[6];
 int valueTimeH[6];

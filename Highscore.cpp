@@ -100,6 +100,7 @@ void getHighscoreH()
             countH++;
         }
     }
+//    cout << highscoreH[1] << endl << highscoreH[12];
 
     fileH.close();
 }
@@ -110,7 +111,7 @@ void getHighscoreH()
 //
 //    return tempt;
 //}
-
+//
 //void processHighscoreE()
 //{
 //    for(int i = 0; i < 18; i++)
@@ -132,7 +133,7 @@ void getHighscoreH()
 //
 //        }
 //    }
-//
+
 //    fstream fileE;
 //    fileE.open(pathE, ios::in | ios::out);
 //    fileE.seekg(0);

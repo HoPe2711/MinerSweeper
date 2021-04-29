@@ -9,6 +9,6 @@ void renderTextHighScoreH();
 void getHighscoreE();
 void getHighscoreM();
 void getHighscoreH();
-void processHighscoreE();
 
+void processHighscoreE();
 int convertString(string str);
