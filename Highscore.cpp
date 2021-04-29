@@ -101,9 +101,6 @@ void getHighscoreH()
         }
     }
 
-    for(int i = 0; i < 6; i++){
-        cout << valueTimeH[i] << endl;
-    }
     fileH.close();
 }
 
