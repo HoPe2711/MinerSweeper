@@ -119,55 +119,35 @@ bool loadMedia()
 
         // highscore easy
         getHighscoreE();
-        int countE = 0;
-		for(int i = 0; i < 18; i++)
+		for(int i = 0; i < 12; i++)
         {
-            if(i % 3 != 2)
+            if( !gTextTextureE[i].loadFromRenderedText( highscoreE[i], textColor ) )
             {
-
-                if( !gTextTextureE[countE].loadFromRenderedText( highscoreE[i], textColor ) )
-                {
-                    cout << "Failed to render highscore easy!\n";
-                    success = false;
-                }
-                countE++;
+                cout << "Failed to render highscore easy!\n";
+                success = false;
             }
-
         }
 
 		// highscore medium
         getHighscoreM();
-        int countM = 0;
-		for(int i = 0; i < 18; i++)
+        for(int i = 0; i < 12; i++)
         {
-            if(i % 3 != 2)
+            if( !gTextTextureM[i].loadFromRenderedText( highscoreM[i], textColor ) )
             {
-
-                if( !gTextTextureM[countM].loadFromRenderedText( highscoreM[i], textColor ) )
-                {
-                    cout << "Failed to render highscore medium!\n";
-                    success = false;
-                }
-                countM++;
+                cout << "Failed to render highscore meidum!\n";
+                success = false;
             }
-
         }
 
         // highscore hard
 		getHighscoreH();
-        int countH = 0;
-		for(int i = 0; i < 18; i++)
+		for(int i = 0; i < 12; i++)
         {
-            if(i % 3 != 2)
+            if( !gTextTextureH[i].loadFromRenderedText( highscoreH[i], textColor ) )
             {
-                if( !gTextTextureH[countH].loadFromRenderedText( highscoreH[i], textColor ) )
-                {
-                    cout << "Failed to render highscore hard!\n";
-                    success = false;
-                }
-                countH++;
+                cout << "Failed to render highscore hard!\n";
+                success = false;
             }
-
         }
     }
 

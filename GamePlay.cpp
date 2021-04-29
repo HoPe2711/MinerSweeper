@@ -79,10 +79,7 @@ void flagManager()
 {
     if ( isWinning && !gameOver)
     {
-        ofstream outfileE("outfileE.txt", std::ios::app);
-        string testtime = "1:00"; int test_time = 60;
-        outfileE << testtime << " " << test_time << endl;
-        outfileE.close();
+//        processHighscoreE();
 
         SDL_RenderPresent( gRenderer );
         SDL_Delay(500);

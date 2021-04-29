@@ -44,14 +44,20 @@ bool gameOver = false;
 bool isWinning = false;
 bool playAgain = false;
 time_t start_t, end_t;
+int diff;
+int globalTime;
 
 int mineCount = 10;
 LButton gButtons[rowSize][columnSize];
 
 stringstream mineLeft;
-string highscoreE[18];
-string highscoreM[18];
+string highscoreE[12];
+string highscoreM[12];
+// bug highscoreH
 string highscoreH[18];
+int valueTimeE[6];
+int valueTimeM[6];
+int valueTimeH[6];
 
 int board[rowSize][columnSize];
 

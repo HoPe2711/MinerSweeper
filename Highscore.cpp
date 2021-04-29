@@ -2,18 +2,33 @@
 
 void getHighscoreE()
 {
-    ifstream fileE( "Highscore/easy.txt");
+    fstream fileE;
+    fileE.open(pathE, ios::in | ios::out);
+
     if(!fileE)
     {
         cout << "Can not open highscore data";
     }
-    int countE = 0;
+    int countE = 0, i = 0, j = 0;
     while (!fileE.eof()){
         string line;
-        getline(fileE, line);
+        int num;
+
         if (fileE)
         {
-            highscoreE[countE] = line;
+            if (countE % 3 != 2)
+            {
+                getline(fileE, line);
+                highscoreE[j] = line;
+                j++;
+            }
+            else
+            {
+                fileE >> num;
+                valueTimeE[i] = num;
+                fileE.ignore(1);
+                i++;
+            }
             countE++;
         }
     }
@@ -23,18 +38,31 @@ void getHighscoreE()
 
 void getHighscoreM()
 {
-    ifstream fileM( "Highscore/medium.txt");
+    ifstream fileM(pathM);
     if(!fileM)
     {
         cout << "Can not open highscore data";
     }
-    int countM = 0;
+    int countM = 0, i = 0, j = 0;
     while (!fileM.eof()){
         string line;
-        getline(fileM, line);
+        int num;
+
         if (fileM)
         {
-            highscoreM[countM] = line;
+            if (countM % 3 != 2)
+            {
+                getline(fileM, line);
+                highscoreM[j] = line;
+                j++;
+            }
+            else
+            {
+                fileM >> num;
+                valueTimeM[i] = num;
+                fileM.ignore(1);
+                i++;
+            }
             countM++;
         }
     }
@@ -44,24 +72,82 @@ void getHighscoreM()
 
 void getHighscoreH()
 {
-    ifstream fileH( "Highscore/hard.txt");
+    ifstream fileH(pathH);
     if(!fileH)
     {
         cout << "Can not open highscore data";
     }
-    int countH = 0;
+    int countH = 0, i = 0, j = 0;
     while (!fileH.eof()){
         string line;
-        getline(fileH, line);
+        int num;
+
         if (fileH)
         {
-            highscoreH[countH] = line;
+            if (countH % 3 != 2)
+            {
+                getline(fileH, line);
+                highscoreH[j] = line;
+                j++;
+            }
+            else
+            {
+                fileH >> num;
+                valueTimeH[i] = num;
+                fileH.ignore(1);
+                i++;
+            }
             countH++;
         }
     }
 
+    for(int i = 0; i < 6; i++){
+        cout << valueTimeH[i] << endl;
+    }
     fileH.close();
 }
+
+//int convertString(string str)
+//{
+//    int tempt = stoi(str);
+//
+//    return tempt;
+//}
+
+//void processHighscoreE()
+//{
+//    for(int i = 0; i < 18; i++)
+//    {
+//        if(i % 3 == 2)
+//        {
+//            int tempt_num = stoi(highscoreE[i]);
+//
+//            if(globalTime < tempt_num)
+//            {
+//    //            for(int j = i+3; j < 18; j += 3)
+//    //            {
+//    //                highscoreE[j] = highscoreE[j-3];
+//    //            }
+//                string tempt_str = to_string(globalTime);
+//                highscoreE[i] = "60";
+//                break;
+//            }
+//
+//        }
+//    }
+//
+//    fstream fileE;
+//    fileE.open(pathE, ios::in | ios::out);
+//    fileE.seekg(0);
+//
+//    for(int i = 0; i < 18; i++)
+//    {
+////        highscoreE[i] = "3";
+//        fileE << highscoreE[i] << endl;
+//    }
+//
+//    fileE.close();
+//}
 
 void renderTextHighScoreE()
 {

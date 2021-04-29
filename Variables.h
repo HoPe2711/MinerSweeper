@@ -54,11 +54,16 @@ extern bool isWinning;
 extern int mineCount;
 extern bool playAgain;
 extern time_t start_t, end_t;
+extern int diff;
+extern int globalTime;
 
 extern stringstream mineLeft;
-extern string highscoreE[18];
-extern string highscoreM[18];
+extern string highscoreE[12];
+extern string highscoreM[12];
 extern string highscoreH[18];
+extern int valueTimeE[6];
+extern int valueTimeM[6];
+extern int valueTimeH[6];
 
 extern int board[rowSize][columnSize];
 

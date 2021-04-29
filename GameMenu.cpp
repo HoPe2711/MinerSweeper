@@ -11,6 +11,8 @@ void count_time(int test_time){
         ++test_time;
         SDL_Delay(1000);
     }
+
+    globalTime = test_time;
 }
 
 void startGame(bool &quit )
@@ -118,21 +120,21 @@ void startGame(bool &quit )
                     }
                     //easy
                     else if ( gButtons_.handleEvent_(&e, 200, 182, 439, 243)) {
-
+                        diff = 0;
                         mineCount = 10;
                         countMineLeft = mineCount;
                         ok = 3;
                     }
                     //medium
                     else if ( gButtons_.handleEvent_(&e, 200, 318, 439, 379) ) {
-
+                        diff = 1;
                         mineCount = 15;
                         countMineLeft = mineCount;
                         ok = 3;
                     }
                     //hard
                     else if ( gButtons_.handleEvent_(&e, 200, 448, 439, 510) ) {
-
+                        diff = 2;
                         mineCount = 20;
                         countMineLeft = mineCount;
                         ok = 3;

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Variables.h"
+#include "Highscore.h"
 
 void createTableWithMine();
 bool checkWinning();
