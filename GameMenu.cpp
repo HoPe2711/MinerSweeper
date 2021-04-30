@@ -6,12 +6,12 @@
 bool quit1 = false;
 
 void count_time(int test_time){
-    while (!gameOver && !isWinning && !quit1){
+    while (!gameOver && !isWinning && !quit1)
+    {
         cout << test_time << endl;
         ++test_time;
         SDL_Delay(1000);
     }
-
     globalTime = test_time;
 }
 

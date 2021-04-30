@@ -79,7 +79,16 @@ void flagManager()
 {
     if ( isWinning && !gameOver)
     {
-//        processHighscoreE();
+
+        switch(diff)
+        {
+        case 0:
+            processHighscoreE();
+        case 1:
+            processHighscoreM();
+        case 2:
+            processHighscoreH();
+        }
 
         SDL_RenderPresent( gRenderer );
         SDL_Delay(500);
@@ -94,6 +103,13 @@ void flagManager()
 
     if ( gameOver )
     {
+        if (diff == 0)
+            processHighscoreE();
+        else if (diff == 1)
+            processHighscoreM();
+        else if (diff == 2)
+            processHighscoreH();
+
         gTextTexture.render( ( SCREEN_WIDTH - gTextTexture.getWidth() ) / 2, 0 );
         Mix_PlayMusic(loser, 0);
         for( int i = 0; i < rowSize; i++ )

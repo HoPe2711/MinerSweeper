@@ -100,52 +100,127 @@ void getHighscoreH()
             countH++;
         }
     }
-//    cout << highscoreH[1] << endl << highscoreH[12];
 
     fileH.close();
 }
 
-//int convertString(string str)
-//{
-//    int tempt = stoi(str);
-//
-//    return tempt;
-//}
-//
-//void processHighscoreE()
-//{
-//    for(int i = 0; i < 18; i++)
+int convertString(string str)
+{
+    int tempt = stoi(str);
+
+    return tempt;
+}
+
+void processHighscoreE()
+{
+//    for(int i = 0; i < 6; i++)
 //    {
-//        if(i % 3 == 2)
+//        if (globalTime < valueTimeE[i])
 //        {
-//            int tempt_num = stoi(highscoreE[i]);
-//
-//            if(globalTime < tempt_num)
-//            {
-//    //            for(int j = i+3; j < 18; j += 3)
-//    //            {
-//    //                highscoreE[j] = highscoreE[j-3];
-//    //            }
-//                string tempt_str = to_string(globalTime);
-//                highscoreE[i] = "60";
-//                break;
-//            }
-//
+//            valueTimeE[i] = globalTime;
 //        }
 //    }
 
-//    fstream fileE;
-//    fileE.open(pathE, ios::in | ios::out);
-//    fileE.seekg(0);
-//
-//    for(int i = 0; i < 18; i++)
+//    cout << globalTime << endl;
+
+    fstream fileE;
+    fileE.open(pathE, ios::in | ios::out);
+    fileE.seekg(0);
+
+    int j = 0, k = 0;
+    for(int i = 0; i < 18; i++)
+    {
+        if (i % 3 != 2)
+        {
+            fileE << highscoreE[j] << endl;
+            j++;
+        }
+        else
+        {
+            if (k != 5)
+                fileE << 300 << endl;
+            else
+                fileE << 300;
+            k++;
+        }
+    }
+
+    fileE.close();
+}
+
+void processHighscoreM()
+{
+//    for(int i = 0; i < 6; i++)
 //    {
-////        highscoreE[i] = "3";
-//        fileE << highscoreE[i] << endl;
+//        if (globalTime < valueTimeE[i])
+//        {
+//            valueTimeM[i] = globalTime;
+//        }
 //    }
-//
-//    fileE.close();
-//}
+
+//    cout << globalTime << endl;
+
+    fstream fileM;
+    fileM.open(pathM, ios::in| ios::out);
+    fileM.seekg(0);
+
+    int j = 0, k = 0;
+    for(int i = 0; i < 18; i++)
+    {
+        if (i % 3 != 2)
+        {
+            fileM << highscoreM[j] << endl;
+            j++;
+        }
+        else
+        {
+            if (k != 5)
+                fileM << 300 << endl;
+            else
+                fileM << 300;
+            k++;
+        }
+    }
+
+    fileM.close();
+}
+
+void processHighscoreH()
+{
+//    for(int i = 0; i < 6; i++)
+//    {
+//        if (globalTime < valueTimeE[i])
+//        {
+//            valueTimeH[i] = globalTime;
+//        }
+//    }
+
+//    cout << globalTime << endl;
+
+    fstream fileH;
+    fileH.open(pathH, ios::in| ios::out);
+    fileH.seekg(0);
+
+    int j = 0, k = 0;
+    for(int i = 0; i < 18; i++)
+    {
+        if (i % 3 != 2)
+        {
+            fileH << highscoreH[j] << endl;
+            j++;
+        }
+        else
+        {
+            if (k != 5)
+                fileH << 300 << endl;
+            else
+                fileH << 300;
+            k++;
+        }
+    }
+
+    fileH.close();
+}
 
 void renderTextHighScoreE()
 {

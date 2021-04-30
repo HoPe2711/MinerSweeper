@@ -11,4 +11,6 @@ void getHighscoreM();
 void getHighscoreH();
 
 void processHighscoreE();
+void processHighscoreM();
+void processHighscoreH();
 int convertString(string str);

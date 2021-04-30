@@ -1,18 +1,18 @@
 Tan Minh
 1:11
-661
+100
 Duc Manh
 1:1
-660
+100
 Thai Binh 
 0:01
-1
+100
 Tan Minh
 1:11
-661
+100
 Duc Manh
 1:1
-660
+100
 Thai Binh 
 0:01
-1
+100
