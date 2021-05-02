@@ -52,7 +52,8 @@ void getHighscoreE()
 
 void getHighscoreM()
 {
-    ifstream fileM(pathM);
+    fstream fileM;
+    fileM.open(pathM, ios::in);
     if(!fileM)
     {
         cout << "Can not open highscore data";
@@ -80,13 +81,13 @@ void getHighscoreM()
             countM++;
         }
     }
-
     fileM.close();
 }
 
 void getHighscoreH()
 {
-    ifstream fileH(pathH);
+    fstream fileH;
+    fileH.open(pathH, ios::in);
     if(!fileH)
     {
         cout << "Can not open highscore data";
@@ -114,10 +115,8 @@ void getHighscoreH()
             countH++;
         }
     }
-
     fileH.close();
 }
-
 
 void processHighscoreE()
 {
@@ -155,81 +154,82 @@ void processHighscoreE()
     }
 
     fileE.close();
-
-
 }
+
 void processHighscoreM()
 {
-//    for(int i = 0; i < 6; i++)
-//    {
-//        if (globalTime < valueTimeE[i])
-//        {
-//            valueTimeM[i] = globalTime;
-//        }
-//    }
+    int pos = 6;
+    for(int i = 0; i < 6; i++)
+    {
+        if (globalTime < valueTimeM[i])
+        {
+            pos = i;
+            break;
+        }
+    }
 
-//    cout << globalTime << endl;
+    //cout << globalTime << endl;
 
-//    fstream fileM;
-//    fileM.open(pathM, ios::in| ios::out);
-//    fileM.seekg(0);
-//
-//    int j = 0, k = 0;
-//    for(int i = 0; i < 18; i++)
-//    {
-//        if (i % 3 != 2)
-//        {
-//            fileM << highscoreM[j] << endl;
-//            j++;
-//        }
-//        else
-//        {
-//            if (k != 5)
-//                fileM << 300 << endl;
-//            else
-//                fileM << 300;
-//            k++;
-//        }
-//    }
-//
-//    fileM.close();
+    fstream fileM;
+    fileM.open(pathM, ios::out);
+    fileM.seekg(0);
+
+    for (int i=0; i<pos; i++){
+        fileM << highscoreM[i*2] << endl << highscoreM[i*2+1] << endl;
+        fileM << valueTimeM[i] << endl;
+    }
+
+    fileM << "long" << endl << convertTime(globalTime) << endl;
+    fileM << globalTime << endl;
+
+    for (int i=pos; i<5; i++){
+        fileM << highscoreM[i*2] << endl << highscoreM[i*2+1] << endl;
+        fileM << valueTimeM[i] << endl;
+    }
+     for(int i = 0; i < 12; i++)
+    {
+        gTextTextureM[i].free();
+    }
+
+    fileM.close();
 }
 
 void processHighscoreH()
 {
-//    for(int i = 0; i < 6; i++)
-//    {
-//        if (globalTime < valueTimeE[i])
-//        {
-//            valueTimeH[i] = globalTime;
-//        }
-//    }
+    int pos = 6;
+    for(int i = 0; i < 6; i++)
+    {
+        if (globalTime < valueTime[i])
+        {
+            pos = i;
+            break;
+        }
+    }
 
-//    cout << globalTime << endl;
+    //cout << globalTime << endl;
 
-//    fstream fileH;
-//    fileH.open(pathH, ios::in| ios::out);
-//    fileH.seekg(0);
-//
-//    int j = 0, k = 0;
-//    for(int i = 0; i < 18; i++)
-//    {
-//        if (i % 3 != 2)
-//        {
-//            fileH << highscoreH[j] << endl;
-//            j++;
-//        }
-//        else
-//        {
-//            if (k != 5)
-//                fileH << 300 << endl;
-//            else
-//                fileH << 300;
-//            k++;
-//        }
-//    }
-//
-//    fileH.close();
+    fstream fileH;
+    fileH.open(pathH, ios::out);
+    fileH.seekg(0);
+
+    for (int i=0; i<pos; i++){
+        fileH << highscoreH[i*2] << endl << highscoreH[i*2+1] << endl;
+        fileH << valueTimeH[i] << endl;
+    }
+
+    fileH << "long" << endl << convertTime(globalTime) << endl;
+    fileH << globalTime << endl;
+
+    for (int i=pos; i<5; i++){
+        fileH << highscoreH[i*2] << endl << highscoreH[i*2+1] << endl;
+        fileH << valueTimeH[i] << endl;
+    }
+     for(int i = 0; i < 12; i++)
+    {
+        gTextTextureH[i].free();
+    }
+
+    fileH.close();
 }
 
 void renderTextHighScoreE()

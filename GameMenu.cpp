@@ -11,6 +11,7 @@ void loadHighScore(){
     getHighscoreE();
     getHighscoreM();
     getHighscoreH();
+
     for(int i = 0; i < 12; i++)
     {
         gTextTextureE[i].loadFromRenderedText( highscoreE[i], textColor );
