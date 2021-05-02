@@ -5,14 +5,41 @@
 
 bool quit1 = false;
 
+void loadHighScore(){
+    SDL_Color textColor = { 255, 255, 255 };
+
+    getHighscoreE();
+    getHighscoreM();
+    getHighscoreH();
+    for(int i = 0; i < 12; i++)
+    {
+        gTextTextureE[i].loadFromRenderedText( highscoreE[i], textColor );
+        gTextTextureM[i].loadFromRenderedText( highscoreM[i], textColor );
+        gTextTextureH[i].loadFromRenderedText( highscoreH[i], textColor );
+    }
+}
+
 void count_time(int test_time){
     while (!gameOver && !isWinning && !quit1)
     {
-        cout << test_time << endl;
+        //cout << test_time << endl;
         ++test_time;
         SDL_Delay(1000);
+        // in ra thoi gian nhe minh
     }
-    globalTime = test_time;
+
+    if ( !gameOver && isWinning && test_time !=0 ) {
+        globalTime = test_time;
+        switch(diff)
+        {
+        case 0:
+            processHighscoreE();
+        case 1:
+            processHighscoreM();
+        case 2:
+            processHighscoreH();
+        }
+    }
 }
 
 void startGame(bool &quit )
@@ -22,9 +49,8 @@ void startGame(bool &quit )
     int prev = 0;
     playAgain = false;
     SDL_Event e;
-
+    loadHighScore();
     gButtonNewGameMenu.render(0, 0);
-
     while( !quit )
     {
         while( SDL_PollEvent( &e ) != 0 )
@@ -90,6 +116,7 @@ void startGame(bool &quit )
                     else if(gButtons_.handleEvent_(&e, 200, 182, 439, 243)) {
                         ok = 2;
                         prev = 2;
+                        getHighscoreE();
                         gButtonHighScore.render(0, 0);
                         renderTextHighScoreE();
                     }
@@ -198,7 +225,6 @@ void startGame(bool &quit )
 
         }
         highscore.join();
-
         playAgainManager( quit );
 
         if(playAgain) break;

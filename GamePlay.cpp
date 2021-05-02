@@ -59,36 +59,10 @@ void mineManager()
     }
 }
 
-string convertTime(int time){
-    int minute = time / 60;
-    int sec = time % 60;
-    string Stime = "";
-    if(sec < 10)
-    {
-        Stime = to_string(minute) + ":0" + to_string(sec);
-    }
-    else
-    {
-        Stime = to_string(minute) + ":" + to_string(sec);
-    }
-
-    return Stime;
-}
-
 void flagManager()
 {
     if ( isWinning && !gameOver)
     {
-
-        switch(diff)
-        {
-        case 0:
-            processHighscoreE();
-        case 1:
-            processHighscoreM();
-        case 2:
-            processHighscoreH();
-        }
 
         SDL_RenderPresent( gRenderer );
         SDL_Delay(500);
@@ -96,20 +70,10 @@ void flagManager()
         gWinningTexture.render( 0, 0 , &stretchRect );
         //gPlayAgainWinTexture.render( ( SCREEN_WIDTH - gPlayAgainWinTexture.getWidth() ) / 2, SCREEN_HEIGHT - gPlayAgainWinTexture.getHeight() );
 
-        //nhap vao highscore
-
-
     }
 
     if ( gameOver )
     {
-        if (diff == 0)
-            processHighscoreE();
-        else if (diff == 1)
-            processHighscoreM();
-        else if (diff == 2)
-            processHighscoreH();
-
         gTextTexture.render( ( SCREEN_WIDTH - gTextTexture.getWidth() ) / 2, 0 );
         Mix_PlayMusic(loser, 0);
         for( int i = 0; i < rowSize; i++ )

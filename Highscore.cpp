@@ -1,10 +1,25 @@
 #include "Highscore.h"
 
+string convertTime(int time){
+    int minute = time / 60;
+    int sec = time % 60;
+    string Stime = "";
+    if(sec < 10)
+    {
+        Stime = to_string(minute) + ":0" + to_string(sec);
+    }
+    else
+    {
+        Stime = to_string(minute) + ":" + to_string(sec);
+    }
+
+    return Stime;
+}
+
 void getHighscoreE()
 {
     fstream fileE;
-    fileE.open(pathE, ios::in | ios::out);
-
+    fileE.open(pathE, ios::in);
     if(!fileE)
     {
         cout << "Can not open highscore data";
@@ -32,7 +47,6 @@ void getHighscoreE()
             countE++;
         }
     }
-
     fileE.close();
 }
 
@@ -104,50 +118,46 @@ void getHighscoreH()
     fileH.close();
 }
 
-int convertString(string str)
-{
-    int tempt = stoi(str);
-
-    return tempt;
-}
 
 void processHighscoreE()
 {
-//    for(int i = 0; i < 6; i++)
-//    {
-//        if (globalTime < valueTimeE[i])
-//        {
-//            valueTimeE[i] = globalTime;
-//        }
-//    }
-
-//    cout << globalTime << endl;
-
-    fstream fileE;
-    fileE.open(pathE, ios::in | ios::out);
-    fileE.seekg(0);
-
-    int j = 0, k = 0;
-    for(int i = 0; i < 18; i++)
+    int pos = 6;
+    for(int i = 0; i < 6; i++)
     {
-        if (i % 3 != 2)
+        if (globalTime < valueTimeE[i])
         {
-            fileE << highscoreE[j] << endl;
-            j++;
-        }
-        else
-        {
-            if (k != 5)
-                fileE << 300 << endl;
-            else
-                fileE << 300;
-            k++;
+            pos = i;
+            break;
         }
     }
 
-    fileE.close();
-}
+    //cout << globalTime << endl;
 
+    fstream fileE;
+    fileE.open(pathE, ios::out);
+    fileE.seekg(0);
+
+    for (int i=0; i<pos; i++){
+        fileE << highscoreE[i*2] << endl << highscoreE[i*2+1] << endl;
+        fileE << valueTimeE[i] << endl;
+    }
+
+    fileE << "long" << endl << convertTime(globalTime) << endl;
+    fileE << globalTime << endl;
+
+    for (int i=pos; i<5; i++){
+        fileE << highscoreE[i*2] << endl << highscoreE[i*2+1] << endl;
+        fileE << valueTimeE[i] << endl;
+    }
+     for(int i = 0; i < 12; i++)
+    {
+        gTextTextureE[i].free();
+    }
+
+    fileE.close();
+
+
+}
 void processHighscoreM()
 {
 //    for(int i = 0; i < 6; i++)
@@ -160,29 +170,29 @@ void processHighscoreM()
 
 //    cout << globalTime << endl;
 
-    fstream fileM;
-    fileM.open(pathM, ios::in| ios::out);
-    fileM.seekg(0);
-
-    int j = 0, k = 0;
-    for(int i = 0; i < 18; i++)
-    {
-        if (i % 3 != 2)
-        {
-            fileM << highscoreM[j] << endl;
-            j++;
-        }
-        else
-        {
-            if (k != 5)
-                fileM << 300 << endl;
-            else
-                fileM << 300;
-            k++;
-        }
-    }
-
-    fileM.close();
+//    fstream fileM;
+//    fileM.open(pathM, ios::in| ios::out);
+//    fileM.seekg(0);
+//
+//    int j = 0, k = 0;
+//    for(int i = 0; i < 18; i++)
+//    {
+//        if (i % 3 != 2)
+//        {
+//            fileM << highscoreM[j] << endl;
+//            j++;
+//        }
+//        else
+//        {
+//            if (k != 5)
+//                fileM << 300 << endl;
+//            else
+//                fileM << 300;
+//            k++;
+//        }
+//    }
+//
+//    fileM.close();
 }
 
 void processHighscoreH()
@@ -197,29 +207,29 @@ void processHighscoreH()
 
 //    cout << globalTime << endl;
 
-    fstream fileH;
-    fileH.open(pathH, ios::in| ios::out);
-    fileH.seekg(0);
-
-    int j = 0, k = 0;
-    for(int i = 0; i < 18; i++)
-    {
-        if (i % 3 != 2)
-        {
-            fileH << highscoreH[j] << endl;
-            j++;
-        }
-        else
-        {
-            if (k != 5)
-                fileH << 300 << endl;
-            else
-                fileH << 300;
-            k++;
-        }
-    }
-
-    fileH.close();
+//    fstream fileH;
+//    fileH.open(pathH, ios::in| ios::out);
+//    fileH.seekg(0);
+//
+//    int j = 0, k = 0;
+//    for(int i = 0; i < 18; i++)
+//    {
+//        if (i % 3 != 2)
+//        {
+//            fileH << highscoreH[j] << endl;
+//            j++;
+//        }
+//        else
+//        {
+//            if (k != 5)
+//                fileH << 300 << endl;
+//            else
+//                fileH << 300;
+//            k++;
+//        }
+//    }
+//
+//    fileH.close();
 }
 
 void renderTextHighScoreE()

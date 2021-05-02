@@ -107,81 +107,80 @@ bool loadMedia()
     }
 
     // text highscore
-    gFont = TTF_OpenFont( "Font/DTM-Sans.ttf", 28 );
-	if( gFont == NULL )
-	{
-		printf( "Failed to load lazy font! SDL_ttf Error: %s\n", TTF_GetError() );
-		success = false;
-	}
-	else
+
+    SDL_Color textColor = { 255, 255, 255 };
+
+    // highscore easy
+    getHighscoreE();
+    for(int i = 0; i < 12; i++)
     {
-        SDL_Color textColor = { 255, 255, 255 };
-
-        // highscore easy
-        getHighscoreE();
-		for(int i = 0; i < 12; i++)
+        if( !gTextTextureE[i].loadFromRenderedText( highscoreE[i], textColor ) )
         {
-            if( !gTextTextureE[i].loadFromRenderedText( highscoreE[i], textColor ) )
-            {
-                cout << "Failed to render highscore easy!\n";
-                success = false;
-            }
+            cout << "Failed to render highscore easy!\n";
+            success = false;
         }
+    }
+    //getHighscoreE();
 
-		// highscore medium
-        getHighscoreM();
-        for(int i = 0; i < 12; i++)
+
+    // highscore medium
+    getHighscoreM();
+    for(int i = 0; i < 12; i++)
+    {
+        if( !gTextTextureM[i].loadFromRenderedText( highscoreM[i], textColor ) )
         {
-            if( !gTextTextureM[i].loadFromRenderedText( highscoreM[i], textColor ) )
-            {
-                cout << "Failed to render highscore meidum!\n";
-                success = false;
-            }
+            cout << "Failed to render highscore meidum!\n";
+            success = false;
         }
+    }
 
-        // highscore hard
-		getHighscoreH();
-		for(int i = 0; i < 12; i++)
+    // highscore hard
+    getHighscoreH();
+    for(int i = 0; i < 12; i++)
+    {
+        if( !gTextTextureH[i].loadFromRenderedText( highscoreH[i], textColor ) )
         {
-            if( !gTextTextureH[i].loadFromRenderedText( highscoreH[i], textColor ) )
-            {
-                cout << "Failed to render highscore hard!\n";
-                success = false;
-            }
+            cout << "Failed to render highscore hard!\n";
+            success = false;
         }
     }
 
     //
 
     if( !gButtonNewGameMenu.loadFromFile( "Image/MenuNewgame.jpg" ) )
-	{
-		printf( "Failed to load button sprite texture!\n" );
-		success = false;
-	}
-	if( !gButtonBackground.loadFromFile( "Image/background.jpg" )) {
+    {
+        printf( "Failed to load button sprite texture!\n" );
+        success = false;
+    }
+    if( !gButtonBackground.loadFromFile( "Image/background.jpg" ))
+    {
         printf( "Failed to load button menu\n ");
         success = false;
-	}
+    }
 
-	if( !gButtonHighScore.loadFromFile( "Image/highscore.jpg" )) {
+    if( !gButtonHighScore.loadFromFile( "Image/highscore.jpg" ))
+    {
         printf( "Failed to load HighScore\n ");
         success = false;
-	}
+    }
 
-	if( !gButtonHighScoreName.loadFromFile( "Image/name.jpg" )) {
+    if( !gButtonHighScoreName.loadFromFile( "Image/name.jpg" ))
+    {
         printf( "Failed to load HighScoreName\n ");
         success = false;
-	}
+    }
 
-	if( !gButtonHighscoreDiff.loadFromFile( "Image/highscore_diff.jpg" )) {
+    if( !gButtonHighscoreDiff.loadFromFile( "Image/highscore_diff.jpg" ))
+    {
         printf( "Failed to load HighScoreName\n ");
         success = false;
-	}
+    }
 
-	if( !gButtonDifficult.loadFromFile( "Image/difficulty.jpg" )) {
+    if( !gButtonDifficult.loadFromFile( "Image/difficulty.jpg" ))
+    {
         printf( "Failed to load Diffcult\n ");
         success = false;
-	}
+    }
 
     if ( !gWinningTexture.loadFromFile( "Image/Winner.png" ) )
     {
@@ -246,6 +245,9 @@ bool loadMedia()
     }
 
     return success;
+}
+
+void closeScore(){
 }
 
 void close()

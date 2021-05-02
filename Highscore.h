@@ -3,6 +3,7 @@
 #include "Variables.h"
 #include <fstream>
 
+
 void renderTextHighScoreE();
 void renderTextHighScoreM();
 void renderTextHighScoreH();
@@ -13,4 +14,4 @@ void getHighscoreH();
 void processHighscoreE();
 void processHighscoreM();
 void processHighscoreH();
-int convertString(string str);
+string convertTime(int time);
