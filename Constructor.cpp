@@ -120,8 +120,6 @@ bool loadMedia()
             success = false;
         }
     }
-    //getHighscoreE();
-
 
     // highscore medium
     getHighscoreM();
@@ -135,6 +133,7 @@ bool loadMedia()
     }
 
     // highscore hard
+
     getHighscoreH();
     for(int i = 0; i < 12; i++)
     {

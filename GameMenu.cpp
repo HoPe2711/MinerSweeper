@@ -117,7 +117,6 @@ void startGame(bool &quit )
                     else if(gButtons_.handleEvent_(&e, 200, 182, 439, 243)) {
                         ok = 2;
                         prev = 2;
-                        getHighscoreE();
                         gButtonHighScore.render(0, 0);
                         renderTextHighScoreE();
                     }
@@ -163,7 +162,7 @@ void startGame(bool &quit )
                     //hard
                     else if ( gButtons_.handleEvent_(&e, 200, 448, 439, 510) ) {
                         diff = 2;
-                        mineCount = 20;
+                        mineCount = 2;
                         countMineLeft = mineCount;
                         ok = 3;
                     }

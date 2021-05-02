@@ -28,7 +28,7 @@ void getHighscoreE()
     while (!fileE.eof()){
         string line;
         int num;
-
+        if (countE == 18) break;
         if (fileE)
         {
             if (countE % 3 != 2)
@@ -62,7 +62,7 @@ void getHighscoreM()
     while (!fileM.eof()){
         string line;
         int num;
-
+        if (countM == 18) break;
         if (fileM)
         {
             if (countM % 3 != 2)
@@ -96,7 +96,7 @@ void getHighscoreH()
     while (!fileH.eof()){
         string line;
         int num;
-
+        if (countH == 18) break;
         if (fileH)
         {
             if (countH % 3 != 2)
@@ -199,7 +199,7 @@ void processHighscoreH()
     int pos = 6;
     for(int i = 0; i < 6; i++)
     {
-        if (globalTime < valueTime[i])
+        if (globalTime < valueTimeH[i])
         {
             pos = i;
             break;
