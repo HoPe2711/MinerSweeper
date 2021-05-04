@@ -141,7 +141,7 @@ void processHighscoreE()
         fileE << valueTimeE[i] << endl;
     }
 
-    fileE << "long" << endl << convertTime(globalTime) << endl;
+    fileE << input << endl << convertTime(globalTime) << endl;
     fileE << globalTime << endl;
 
     for (int i=pos; i<5; i++){

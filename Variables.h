@@ -16,10 +16,7 @@ extern Mix_Music *winner;
 extern Mix_Music *loser;
 extern Mix_Chunk *click;
 
-extern TTF_Font *gGameOver;
-extern TTF_Font *gPlayAgainWin;
-extern TTF_Font *gPlayAgainLose;
-extern TTF_Font *gFont;
+extern TTF_Font *gFontHighScore;
 extern TTF_Font *gFontNameInput;
 
 extern SDL_Rect stretchRect;

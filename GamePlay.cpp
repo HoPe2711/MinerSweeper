@@ -51,7 +51,7 @@ void mineManager()
         SDL_Color textColor = { 140, 140, 140, 255 };
         mineLeft.str ( "" );
         mineLeft << "Mine left: " << countMineLeft;
-        if( !gMineLeftTexture.loadFromRenderedText( mineLeft.str().c_str(), textColor ) )
+        if( !gMineLeftTexture.loadFromRenderedText( mineLeft.str().c_str(), textColor, gFontNameInput ) )
         {
             cout << "Unable to render mine left texture!\n";
         }
@@ -68,13 +68,11 @@ void flagManager()
         SDL_Delay(500);
         Mix_PlayMusic(winner, 0);
         gWinningTexture.render( 0, 0 , &stretchRect );
-        //gPlayAgainWinTexture.render( ( SCREEN_WIDTH - gPlayAgainWinTexture.getWidth() ) / 2, SCREEN_HEIGHT - gPlayAgainWinTexture.getHeight() );
 
     }
 
     if ( gameOver )
     {
-        gTextTexture.render( ( SCREEN_WIDTH - gTextTexture.getWidth() ) / 2, 0 );
         Mix_PlayMusic(loser, 0);
         for( int i = 0; i < rowSize; i++ )
         {
@@ -84,7 +82,6 @@ void flagManager()
                 gButtons[i][j].render(i, j);
             }
         }
-        //gPlayAgainLoseTexture.render( ( SCREEN_WIDTH - gPlayAgainLoseTextu    re.getWidth() ) / 2, SCREEN_HEIGHT - gPlayAgainLoseTexture.getHeight() );
         SDL_RenderPresent( gRenderer );
         SDL_Delay(3000);
         gButtonGameOver.render(0, 0);
@@ -106,6 +103,6 @@ void playAgainManager(bool &quitGame)
             quitGame = false;
             playAgain = true;
         }
-        else if ( e.key.keysym.sym == SDLK_ESCAPE || e.type == SDL_QUIT ) quitGame = true;
+        else if ( e.type == SDL_QUIT ) quitGame = true;
     }
 }

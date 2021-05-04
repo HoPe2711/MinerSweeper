@@ -12,11 +12,11 @@ LTexture::~LTexture()
 	free();
 }
 
-bool LTexture::loadFromRenderedText( string textureText, SDL_Color textColor )
+bool LTexture::loadFromRenderedText( string textureText, SDL_Color textColor, TTF_Font *font )
 {
 	free();
 
-	SDL_Surface* textSurface = TTF_RenderText_Solid( gGameOver, textureText.c_str(), textColor );
+	SDL_Surface* textSurface = TTF_RenderText_Solid( font, textureText.c_str(), textColor );
 	if( textSurface == NULL )
 	{
 	    cout << "Unable to render text surface! SDL_ttf Error: " << TTF_GetError() << endl;

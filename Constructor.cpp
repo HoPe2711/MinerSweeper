@@ -58,71 +58,23 @@ bool loadMedia()
 {
     bool success = true;
 
-    gGameOver = TTF_OpenFont( "Font/DTM-Sans.ttf", 40 );
-    if( gGameOver == NULL )
-    {
-        cout << "Failed to load DTM-Sans font! SDL_ttf Error: " << TTF_GetError() << endl;
-        success = false;
-    }
-    else
-    {
-        SDL_Color textColor = { 140, 140, 140 };
-        if( !gTextTexture.loadFromRenderedText( "GAME OVER :(", textColor ) )
-        {
-            cout << "Failed to render text texture!\n";
-            success = false;
-        }
-    }
+    gFontHighScore = TTF_OpenFont( "Font/DTM-Sans.ttf", 40 );
 
-    gPlayAgainWin = TTF_OpenFont( "Font/DTM-Sans.ttf", 40 );
-    if( gPlayAgainWin == NULL )
-    {
-        cout << "Failed to load DTM-Sans font! SDL_ttf Error: " << TTF_GetError() << endl;
-        success = false;
-    }
-    else
-    {
-        SDL_Color playAgainWin = { 255, 255, 255 };
-        if( !gPlayAgainWinTexture.loadFromRenderedText( "Press s to play again!", playAgainWin ) )
-        {
-            cout << "Failed to render text texture!\n";
-            success = false;
-        }
-    }
-
-    gPlayAgainLose = TTF_OpenFont( "Font/DTM-Sans.ttf", 40 );
-    if( gPlayAgainLose == NULL )
-    {
-        cout << "Failed to load DTM-Sans font! SDL_ttf Error: " << TTF_GetError() << endl;
-        success = false;
-    }
-    else
-    {
-        SDL_Color playAgainLose = { 140, 140, 140 };
-        if( !gPlayAgainLoseTexture.loadFromRenderedText( "Press s to play again!", playAgainLose ) )
-        {
-            cout << "Failed to render text texture!\n";
-            success = false;
-        }
-    }
-
-    gFontNameInput = TTF_OpenFont( "Font/DTM-Sans.ttf", 40 );
-    if ( gFontNameInput == NULL ) {
-        cout << "Failed to load DTM-Sans font! SDL_ttf Error: " << TTF_GetError() << endl;
-        success = false;
-    }
+    gFontNameInput = TTF_OpenFont( "Font/DTM-Sans.ttf", 50 );
 
     SDL_Color textColor = { 255, 255, 255 };
 
-    if ( !gTexTureInputName.loadFromRenderedText( input, textColor ))
-
-    // text highscore
+    if ( !gTexTureInputName.loadFromRenderedText( input, textColor, gFontNameInput ))
+    {
+        cout << "Failed to render text texture!\n";
+        success = false;
+    }
 
     // highscore easy
     getHighscoreE();
     for(int i = 0; i < 12; i++)
     {
-        if( !gTextTextureE[i].loadFromRenderedText( highscoreE[i], textColor ) )
+        if( !gTextTextureE[i].loadFromRenderedText( highscoreE[i], textColor , gFontHighScore) )
         {
             cout << "Failed to render highscore easy!\n";
             success = false;
@@ -133,7 +85,7 @@ bool loadMedia()
     getHighscoreM();
     for(int i = 0; i < 12; i++)
     {
-        if( !gTextTextureM[i].loadFromRenderedText( highscoreM[i], textColor ) )
+        if( !gTextTextureM[i].loadFromRenderedText( highscoreM[i], textColor ,gFontHighScore) )
         {
             cout << "Failed to render highscore meidum!\n";
             success = false;
@@ -145,7 +97,7 @@ bool loadMedia()
     getHighscoreH();
     for(int i = 0; i < 12; i++)
     {
-        if( !gTextTextureH[i].loadFromRenderedText( highscoreH[i], textColor ) )
+        if( !gTextTextureH[i].loadFromRenderedText( highscoreH[i], textColor, gFontHighScore) )
         {
             cout << "Failed to render highscore hard!\n";
             success = false;
@@ -256,7 +208,8 @@ bool loadMedia()
     return success;
 }
 
-void closeScore(){
+void closeScore()
+{
 }
 void close()
 {
@@ -288,15 +241,11 @@ void close()
         gTextTextureH[i].free();
     }
 
-    TTF_CloseFont( gGameOver );
-    TTF_CloseFont( gPlayAgainLose );
-    TTF_CloseFont( gPlayAgainWin );
-    TTF_CloseFont( gFont );
+    TTF_CloseFont( gFontHighScore );
+    TTF_CloseFont( gFontNameInput );
 
-    gGameOver = NULL;
-    gPlayAgainLose = NULL;
-    gPlayAgainWin = NULL;
-    gFont = NULL;
+    gFontHighScore = NULL;
+    gFontNameInput = NULL;
 
     Mix_FreeMusic( winner );
     Mix_FreeMusic( loser );

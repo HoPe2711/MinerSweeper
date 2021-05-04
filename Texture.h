@@ -13,7 +13,7 @@ class LTexture
 	public:
 		LTexture();
 		~LTexture();
-		bool loadFromRenderedText( string textureText, SDL_Color textColor );
+		bool loadFromRenderedText( string textureText, SDL_Color textColor, TTF_Font* font );
 		bool loadFromFile( string path );
 		void free();
 		void render( int x, int y, SDL_Rect* clip = NULL );

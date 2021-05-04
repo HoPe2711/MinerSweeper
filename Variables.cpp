@@ -10,10 +10,7 @@ Mix_Music *winner = NULL;
 Mix_Music *loser = NULL;
 Mix_Chunk *click = NULL;
 
-TTF_Font *gGameOver = NULL;
-TTF_Font *gPlayAgainWin = NULL;
-TTF_Font *gPlayAgainLose = NULL;
-TTF_Font *gFont = NULL;
+TTF_Font *gFontHighScore = NULL;
 TTF_Font *gFontNameInput = NULL;
 
 SDL_Rect gSpriteClips[ BUTTON_SPRITE_TOTAL ];
@@ -52,7 +49,7 @@ int globalTime;
 int mineCount = 10;
 LButton gButtons[rowSize][columnSize];
 
-string input;
+string input = " ";
 stringstream mineLeft;
 string highscoreE[12];
 string highscoreM[12];
