@@ -179,7 +179,7 @@ void processHighscoreM()
         fileM << valueTimeM[i] << endl;
     }
 
-    fileM << "long" << endl << convertTime(globalTime) << endl;
+    fileM << input << endl << convertTime(globalTime) << endl;
     fileM << globalTime << endl;
 
     for (int i=pos; i<5; i++){
@@ -217,7 +217,7 @@ void processHighscoreH()
         fileH << valueTimeH[i] << endl;
     }
 
-    fileH << "long" << endl << convertTime(globalTime) << endl;
+    fileH << input << endl << convertTime(globalTime) << endl;
     fileH << globalTime << endl;
 
     for (int i=pos; i<5; i++){

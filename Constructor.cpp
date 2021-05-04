@@ -64,12 +64,6 @@ bool loadMedia()
 
     SDL_Color textColor = { 255, 255, 255 };
 
-    if ( !gTexTureInputName.loadFromRenderedText( input, textColor, gFontNameInput ))
-    {
-        cout << "Failed to render text texture!\n";
-        success = false;
-    }
-
     // highscore easy
     getHighscoreE();
     for(int i = 0; i < 12; i++)
@@ -202,8 +196,6 @@ bool loadMedia()
         cout << "Failed to load click sound effect! SDL_mixer Error: " << Mix_GetError() << endl;
         success = false;
     }
-
-    SDL_StartTextInput();
 
     return success;
 }

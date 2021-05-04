@@ -34,14 +34,19 @@ void count_time(int test_time)
     if ( !gameOver && isWinning && test_time !=0 )
     {
         globalTime = test_time;
+        cout << diff << endl;
+
         switch(diff)
         {
         case 0:
             processHighscoreE();
+            break;
         case 1:
             processHighscoreM();
+            break;
         case 2:
             processHighscoreH();
+            break;
         }
     }
 }
@@ -55,6 +60,7 @@ void startGame(bool &quit )
     SDL_Event e;
     loadHighScore();
     gButtonNewGameMenu.render(0, 0);
+    bool saveRender = true;
     while( !quit )
     {
         while( SDL_PollEvent( &e ) != 0 )
@@ -72,9 +78,9 @@ void startGame(bool &quit )
             case 0:
                 if(gButtons_.handleEvent_(&e, 203, 210, 437, 282))
                 {
-                    //gButtonBackground.render(0, 0);
                     gButtonHighScoreName.render(0,0);
-                    //gButtonMenu.render(150, 150);
+                    saveRender = true;
+                    SDL_StartTextInput();
                     ok = 1 ;
                     prev = 1;
 
@@ -96,37 +102,46 @@ void startGame(bool &quit )
             case 1:
                 if( prev == 1 )
                 {
-                    SDL_Color textColor = { 0, 0, 0 };
-                    gTexTureInputName.loadFromRenderedText( input, textColor, gFontNameInput);
                     if( gButtons_.handleEvent_(&e, 43, 583, 163, 610) )
                     {
                         ok = 0;
                         gButtonNewGameMenu.render(0, 0);
-
                         SDL_StopTextInput();
                     }
 
-                    else if(gButtons_.handleEvent_(&e, 476, 580, 604, 611) || e.key.keysym.sym == SDLK_KP_ENTER )
+                    else if((e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_RETURN) || gButtons_.handleEvent_(&e, 476, 580, 604, 611) )
                     {
                         ok = 2;
                         gButtonDifficult.render(0, 0);
                         prev = 1;
+                        SDL_StopTextInput();
                     }
-                    else if (e.type == SDL_TEXTINPUT)
+                    else if ( e.type == SDL_TEXTINPUT )
                     {
-                        if (input.size() < 20) {
+                        if (input.size() < 12)
+                        {
                             input += e.text.text;
-                            gTexTureInputName.render(310,260);
+                            saveRender = true;
                         }
                     }
                     else
                     {
-                        if (e.key.keysym.sym == SDLK_BACKSPACE && input.size()>0 )
+                        if (e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_BACKSPACE && input.size()>1 )
                         {
-                            input.erase(input.size()-1, 1);
-                            gTexTureInputName.render(310,260);
+                            input.pop_back();
+                            saveRender = true;
                         }
                     }
+                    if (saveRender)
+                       {
+                            SDL_Color textColor = { 0, 0, 0 };
+                            SDL_SetRenderDrawColor( gRenderer, 0xFF, 0xFF, 0xFF, 0xFF );
+                            SDL_RenderClear( gRenderer );
+                            gButtonHighScoreName.render(0,0);
+                            gTexTureInputName.loadFromRenderedText( input, textColor, gFontNameInput);
+                            gTexTureInputName.render(100,240);
+                            saveRender = false;
+                        }
                 }
 
                 else if( prev == 2 )
@@ -168,6 +183,8 @@ void startGame(bool &quit )
                     if( gButtons_.handleEvent_(&e, 51, 584, 169, 611) )
                     {
                         ok = 1;
+                        saveRender = true;
+                        SDL_StartTextInput();
                         gButtonHighScoreName.render(0, 0);
 
                     }
@@ -214,6 +231,7 @@ void startGame(bool &quit )
         if( ok == 3 ) break;
         SDL_RenderPresent( gRenderer );
     }
+
     while( !quit )
     {
         thread highscore(count_time, 0);
