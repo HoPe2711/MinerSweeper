@@ -69,6 +69,7 @@ void startGame(bool &quit )
             //User requests quit
             if( e.type == SDL_QUIT )
             {
+                Mix_PlayChannel(-1, click, 0);
                 quit = true;
             }
 
@@ -78,6 +79,7 @@ void startGame(bool &quit )
             case 0:
                 if(gButtons_.handleEvent_(&e, 203, 210, 437, 282))
                 {
+                    Mix_PlayChannel(-1, click, 0);
                     gButtonHighScoreName.render(0,0);
                     saveRender = true;
                     SDL_StartTextInput();
@@ -87,6 +89,7 @@ void startGame(bool &quit )
                 }
                 else if (gButtons_.handleEvent_(&e, 203, 354, 437, 426))
                 {
+                    Mix_PlayChannel(-1, click, 0);
                     gButtonHighscoreDiff.render(0, 0);
                     ok = 1;
                     prev = 2;
@@ -94,6 +97,7 @@ void startGame(bool &quit )
                 }
                 else if (gButtons_.handleEvent_(&e, 203, 480, 437, 552))
                 {
+                    Mix_PlayChannel(-1, click, 0);
                     quit = true;
                     ok = 1;
                     prev = 3;
@@ -102,8 +106,10 @@ void startGame(bool &quit )
             case 1:
                 if( prev == 1 )
                 {
+
                     if( gButtons_.handleEvent_(&e, 43, 583, 163, 610) )
                     {
+                        Mix_PlayChannel(-1, click, 0);
                         ok = 0;
                         gButtonNewGameMenu.render(0, 0);
                         SDL_StopTextInput();
@@ -111,6 +117,7 @@ void startGame(bool &quit )
 
                     else if((e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_RETURN) || gButtons_.handleEvent_(&e, 476, 580, 604, 611) )
                     {
+                        Mix_PlayChannel(-1, click, 0);
                         ok = 2;
                         gButtonDifficult.render(0, 0);
                         prev = 1;
@@ -118,7 +125,8 @@ void startGame(bool &quit )
                     }
                     else if ( e.type == SDL_TEXTINPUT )
                     {
-                        if (input.size() < 12)
+
+                        if (input.size() < 15)
                         {
                             input += e.text.text;
                             saveRender = true;
@@ -134,6 +142,7 @@ void startGame(bool &quit )
                     }
                     if (saveRender)
                        {
+                            Mix_PlayChannel(-1, click, 0);
                             SDL_Color textColor = { 0, 0, 0 };
                             SDL_SetRenderDrawColor( gRenderer, 0xFF, 0xFF, 0xFF, 0xFF );
                             SDL_RenderClear( gRenderer );
@@ -148,12 +157,14 @@ void startGame(bool &quit )
                 {
                     if (gButtons_.handleEvent_(&e, 51, 584, 169, 611))
                     {
+                        Mix_PlayChannel(-1, click, 0);
                         ok = 0;
                         gButtonNewGameMenu.render(0, 0);
                     }
 
                     else if(gButtons_.handleEvent_(&e, 200, 182, 439, 243))
                     {
+                        Mix_PlayChannel(-1, click, 0);
                         ok = 2;
                         prev = 2;
                         gButtonHighScore.render(0, 0);
@@ -161,6 +172,7 @@ void startGame(bool &quit )
                     }
                     else if(gButtons_.handleEvent_(&e, 200, 318, 439, 379))
                     {
+                        Mix_PlayChannel(-1, click, 0);
                         ok = 2;
                         prev = 2;
                         gButtonHighScore.render(0, 0);
@@ -168,6 +180,7 @@ void startGame(bool &quit )
                     }
                     else if( gButtons_.handleEvent_(&e, 200, 448, 439, 510) )
                     {
+                        Mix_PlayChannel(-1, click, 0);
                         ok = 2;
                         prev = 2;
                         gButtonHighScore.render(0, 0);
@@ -182,6 +195,7 @@ void startGame(bool &quit )
 
                     if( gButtons_.handleEvent_(&e, 51, 584, 169, 611) )
                     {
+                        Mix_PlayChannel(-1, click, 0);
                         ok = 1;
                         saveRender = true;
                         SDL_StartTextInput();
@@ -191,6 +205,7 @@ void startGame(bool &quit )
                     //easy
                     else if ( gButtons_.handleEvent_(&e, 200, 182, 439, 243))
                     {
+                        Mix_PlayChannel(-1, click, 0);
                         diff = 0;
                         mineCount = 10;
                         countMineLeft = mineCount;
@@ -199,6 +214,7 @@ void startGame(bool &quit )
                     //medium
                     else if ( gButtons_.handleEvent_(&e, 200, 318, 439, 379) )
                     {
+                        Mix_PlayChannel(-1, click, 0);
                         diff = 1;
                         mineCount = 15;
                         countMineLeft = mineCount;
@@ -207,6 +223,7 @@ void startGame(bool &quit )
                     //hard
                     else if ( gButtons_.handleEvent_(&e, 200, 448, 439, 510) )
                     {
+                        Mix_PlayChannel(-1, click, 0);
                         diff = 2;
                         mineCount = 20;
                         countMineLeft = mineCount;
@@ -218,6 +235,7 @@ void startGame(bool &quit )
                 {
                     if( gButtons_.handleEvent_(&e, 42, 576, 158, 602) )
                     {
+                        Mix_PlayChannel(-1, click, 0);
                         ok = 1;
                         gButtonHighscoreDiff.render(0, 0);
 

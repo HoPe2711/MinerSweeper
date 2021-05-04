@@ -116,11 +116,11 @@
 1619956039 source:g:\code\ltnc_btl\minersweeper\variables.cpp
 	"Variables.h"
 
-1620095318 source:e:\code\code_codeblocks\practise_code\sdl\minersweeper\button.cpp
+1620110601 source:e:\code\code_codeblocks\practise_code\sdl\minersweeper\button.cpp
 	"Variables.h"
 	<ctime>
 
-1620096769 e:\code\code_codeblocks\practise_code\sdl\minersweeper\variables.h
+1620108153 e:\code\code_codeblocks\practise_code\sdl\minersweeper\variables.h
 	<SDL_mixer.h>
 	<sstream>
 	<fstream>
@@ -130,37 +130,37 @@
 	"Button.h"
 	"thread"
 
-1620095318 e:\code\code_codeblocks\practise_code\sdl\minersweeper\constances.h
+1620108153 e:\code\code_codeblocks\practise_code\sdl\minersweeper\constances.h
 	"Texture.h"
 	"Button.h"
 	"thread"
 
-1620095318 e:\code\code_codeblocks\practise_code\sdl\minersweeper\texture.h
+1620108153 e:\code\code_codeblocks\practise_code\sdl\minersweeper\texture.h
 	<iostream>
 	<SDL.h>
 	<SDL_image.h>
 	<SDL_ttf.h>
 	<cstring>
 
-1620095318 e:\code\code_codeblocks\practise_code\sdl\minersweeper\button.h
+1620108153 e:\code\code_codeblocks\practise_code\sdl\minersweeper\button.h
 	"Variables.h"
 
-1620097491 source:e:\code\code_codeblocks\practise_code\sdl\minersweeper\constructor.cpp
+1620108730 source:e:\code\code_codeblocks\practise_code\sdl\minersweeper\constructor.cpp
 	"Constructor.h"
 
-1620096289 e:\code\code_codeblocks\practise_code\sdl\minersweeper\constructor.h
+1620108153 e:\code\code_codeblocks\practise_code\sdl\minersweeper\constructor.h
 	"Variables.h"
 	"Highscore.h"
 
-1620095318 source:e:\code\code_codeblocks\practise_code\sdl\minersweeper\gameplay.cpp
+1620108153 source:e:\code\code_codeblocks\practise_code\sdl\minersweeper\gameplay.cpp
 	"GamePlay.h"
 	<ctime>
 
-1620095318 e:\code\code_codeblocks\practise_code\sdl\minersweeper\gameplay.h
+1620108153 e:\code\code_codeblocks\practise_code\sdl\minersweeper\gameplay.h
 	"Variables.h"
 	"Highscore.h"
 
-1620095319 source:e:\code\code_codeblocks\practise_code\sdl\minersweeper\main.cpp
+1620108153 source:e:\code\code_codeblocks\practise_code\sdl\minersweeper\main.cpp
 	<iostream>
 	<ctime>
 	<stdlib.h>
@@ -171,18 +171,18 @@
 	"GamePlay.h"
 	"GameMenu.h"
 
-1620095318 source:e:\code\code_codeblocks\practise_code\sdl\minersweeper\texture.cpp
+1620108153 source:e:\code\code_codeblocks\practise_code\sdl\minersweeper\texture.cpp
 	"Variables.h"
 
-1620097657 source:e:\code\code_codeblocks\practise_code\sdl\minersweeper\variables.cpp
+1620108153 source:e:\code\code_codeblocks\practise_code\sdl\minersweeper\variables.cpp
 	"Variables.h"
 
-1620095318 e:\code\code_codeblocks\practise_code\sdl\minersweeper\gamemenu.h
+1620108153 e:\code\code_codeblocks\practise_code\sdl\minersweeper\gamemenu.h
 	"Variables.h"
 	"GamePlay.h"
 	<thread>
 
-1620097591 source:e:\code\code_codeblocks\practise_code\sdl\minersweeper\gamemenu.cpp
+1620111392 source:e:\code\code_codeblocks\practise_code\sdl\minersweeper\gamemenu.cpp
 	"GameMenu.h"
 	"Highscore.h"
 	<chrono>
@@ -674,10 +674,10 @@
 	"begin_code.h"
 	"close_code.h"
 
-1620095318 e:\code\code_codeblocks\practise_code\sdl\minersweeper\highscore.h
+1620108153 e:\code\code_codeblocks\practise_code\sdl\minersweeper\highscore.h
 	"Variables.h"
 	<fstream>
 
-1620095318 source:e:\code\code_codeblocks\practise_code\sdl\minersweeper\highscore.cpp
+1620108153 source:e:\code\code_codeblocks\practise_code\sdl\minersweeper\highscore.cpp
 	"Highscore.h"
 

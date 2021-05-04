@@ -95,6 +95,7 @@ void playAgainManager(bool &quitGame)
     {
         if( gButtons_.handleEvent_(&e, 228, 458, 412, 479) )
         {
+            Mix_PlayChannel(-1, click, 0);
             Mix_HaltMusic();
             countMineLeft = mineCount;
             countTileLeft = rowSize * columnSize;
