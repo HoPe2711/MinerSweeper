@@ -106,9 +106,17 @@ bool loadMedia()
         }
     }
 
-    // text highscore
+    gFontNameInput = TTF_OpenFont( "Font/DTM-Sans.ttf", 40 );
+    if ( gFontNameInput == NULL ) {
+        cout << "Failed to load DTM-Sans font! SDL_ttf Error: " << TTF_GetError() << endl;
+        success = false;
+    }
 
     SDL_Color textColor = { 255, 255, 255 };
+
+    if ( !gTexTureInputName.loadFromRenderedText( input, textColor ))
+
+    // text highscore
 
     // highscore easy
     getHighscoreE();
@@ -243,12 +251,13 @@ bool loadMedia()
         success = false;
     }
 
+    SDL_StartTextInput();
+
     return success;
 }
 
 void closeScore(){
 }
-
 void close()
 {
     gButtonSpriteSheetTexture.free();
@@ -264,7 +273,7 @@ void close()
     gButtonHighScoreName.free();
     gButtonMenu.free();
     gButtonNewGameMenu.free();
-
+    gTexTureInputName.free();
 
     for(int i = 0; i < 12; i++)
     {

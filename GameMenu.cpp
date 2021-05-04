@@ -74,6 +74,7 @@ void startGame(bool &quit )
                     //gButtonMenu.render(150, 150);
                     ok = 1 ;
                     prev = 1;
+
                 }
                 else if (gButtons_.handleEvent_(&e, 203, 354, 437, 426))
                 {
@@ -96,6 +97,8 @@ void startGame(bool &quit )
                     {
                         ok = 0;
                         gButtonNewGameMenu.render(0, 0);
+
+                        SDL_StopTextInput();
                     }
 
                     else if(gButtons_.handleEvent_(&e, 476, 580, 604, 611))
@@ -104,6 +107,7 @@ void startGame(bool &quit )
                         gButtonDifficult.render(0, 0);
                         prev = 1;
                     }
+
                 }
 
                 else if( prev == 2 )
@@ -162,7 +166,7 @@ void startGame(bool &quit )
                     //hard
                     else if ( gButtons_.handleEvent_(&e, 200, 448, 439, 510) ) {
                         diff = 2;
-                        mineCount = 2;
+                        mineCount = 20;
                         countMineLeft = mineCount;
                         ok = 3;
                     }
@@ -172,7 +176,7 @@ void startGame(bool &quit )
                     if( gButtons_.handleEvent_(&e, 42, 576, 158, 602) )
                     {
                         ok = 1;
-                        gButtonDifficult.render(0, 0);
+                        gButtonHighscoreDiff.render(0, 0);
 
                     }
                 }

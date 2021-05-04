@@ -20,6 +20,7 @@ extern TTF_Font *gGameOver;
 extern TTF_Font *gPlayAgainWin;
 extern TTF_Font *gPlayAgainLose;
 extern TTF_Font *gFont;
+extern TTF_Font *gFontNameInput;
 
 extern SDL_Rect stretchRect;
 extern SDL_Rect gSpriteClips[ BUTTON_SPRITE_TOTAL ];
@@ -44,6 +45,8 @@ extern LTexture gMineLeftTexture;
 extern LTexture gPlayAgainWinTexture;
 extern LTexture gPlayAgainLoseTexture;
 
+extern LTexture gTexTureInputName;
+
 
 extern LButton gButtons[rowSize][columnSize];
 extern LButton gButtons_;
@@ -57,6 +60,7 @@ extern time_t start_t, end_t;
 extern int diff;
 extern int globalTime;
 
+extern string input;
 extern stringstream mineLeft;
 extern string highscoreE[12];
 extern string highscoreM[12];

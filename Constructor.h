@@ -5,6 +5,7 @@
 
 bool init();
 bool loadMedia();
+bool loop();
 void close();
 
 

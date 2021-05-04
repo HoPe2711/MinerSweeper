@@ -14,6 +14,7 @@ TTF_Font *gGameOver = NULL;
 TTF_Font *gPlayAgainWin = NULL;
 TTF_Font *gPlayAgainLose = NULL;
 TTF_Font *gFont = NULL;
+TTF_Font *gFontNameInput = NULL;
 
 SDL_Rect gSpriteClips[ BUTTON_SPRITE_TOTAL ];
 LTexture gButtonSpriteSheetTexture;
@@ -36,6 +37,7 @@ LTexture gTextTextureH[12];
 LTexture gMineLeftTexture;
 LTexture gPlayAgainWinTexture;
 LTexture gPlayAgainLoseTexture;
+LTexture gTexTureInputName;
 
 LButton gButtons_;
 int countMineLeft;
@@ -50,6 +52,7 @@ int globalTime;
 int mineCount = 10;
 LButton gButtons[rowSize][columnSize];
 
+string input;
 stringstream mineLeft;
 string highscoreE[12];
 string highscoreM[12];
