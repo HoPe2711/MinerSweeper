@@ -130,8 +130,7 @@ void processHighscoreE()
         }
     }
 
-    //cout << globalTime << endl;
-
+    // if pos < 6  statusNewHighScore change
     fstream fileE;
     fileE.open(pathE, ios::out);
     fileE.seekg(0);

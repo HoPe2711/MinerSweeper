@@ -61,7 +61,7 @@ extern int globalTime;
 
 extern string input;
 extern stringstream mineLeft;
-extern stringstream TimeOutput;
+extern string timeOutput;
 extern string highscoreE[12];
 extern string highscoreM[12];
 extern string highscoreH[12];

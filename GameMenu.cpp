@@ -25,22 +25,10 @@ void count_time(int test_time)
 {
     while (!gameOver && !isWinning && !quit1)
     {
-        //cout << test_time << endl;
-        ++test_time;
-
-        // in ra thoi gian nhe minh
-        SDL_Color textColor = { 255, 255, 255 };
-        TimeOutput.str ( "" );
-        TimeOutput << "Time: " << test_time;
-        string Test = "test";
-        if( !gTimeOutput.loadFromRenderedText( Test, textColor, gFontNameInput ) )
-        {
-            cout << "Unable to render mine left texture!\n";
-        }
-//        ( SCREEN_WIDTH - gMineLeftTexture.getWidth() ) / 2
-        gTimeOutput.render( 0 , 0 );
 
         SDL_Delay(1000);
+        ++test_time;
+        globalTime = test_time;
     }
 
     if ( !gameOver && isWinning && test_time !=0 )
@@ -153,16 +141,16 @@ void startGame(bool &quit )
                         }
                     }
                     if (saveRender)
-                       {
-                            Mix_PlayChannel(-1, click, 0);
-                            SDL_Color textColor = { 0, 0, 0 };
-                            SDL_SetRenderDrawColor( gRenderer, 0xFF, 0xFF, 0xFF, 0xFF );
-                            SDL_RenderClear( gRenderer );
-                            gButtonHighScoreName.render(0,0);
-                            gTexTureInputName.loadFromRenderedText( input, textColor, gFontNameInput);
-                            gTexTureInputName.render(100,240);
-                            saveRender = false;
-                        }
+                    {
+                        Mix_PlayChannel(-1, click, 0);
+                        SDL_Color textColor = { 0, 0, 0 };
+                        SDL_SetRenderDrawColor( gRenderer, 0xFF, 0xFF, 0xFF, 0xFF );
+                        SDL_RenderClear( gRenderer );
+                        gButtonHighScoreName.render(0,0);
+                        gTexTureInputName.loadFromRenderedText( input, textColor, gFontNameInput);
+                        gTexTureInputName.render(100,240);
+                        saveRender = false;
+                    }
                 }
 
                 else if( prev == 2 )
@@ -261,10 +249,11 @@ void startGame(bool &quit )
         if( ok == 3 ) break;
         SDL_RenderPresent( gRenderer );
     }
-
+    thread highscore(count_time, 0);
+    globalTime = 0;
     while( !quit )
     {
-        thread highscore(count_time, 0);
+
         createTableWithMine();
         while ( !gameOver && !quit && !isWinning)
         {
@@ -296,14 +285,21 @@ void startGame(bool &quit )
                 }
             }
 
+            SDL_Color textColor = { 255, 255, 255 };
+            timeOutput = "Time: " + convertTime(globalTime);
+            if( !gTimeOutput.loadFromRenderedText( timeOutput, textColor, gFontNameInput ) )
+            {
+                cout << "Unable to render mine left texture!\n";
+            }
+            gTimeOutput.render( 430, 0 );
             mineManager();
             flagManager();
             SDL_RenderPresent( gRenderer );
 
         }
-        highscore.join();
         playAgainManager( quit );
 
         if(playAgain) break;
     }
+    highscore.join();
 }

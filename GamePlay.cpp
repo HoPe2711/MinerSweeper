@@ -64,7 +64,7 @@ void flagManager()
 {
     if ( isWinning && !gameOver)
     {
-
+        // if statusNewHighScore change render them dong chuc mung ban da co NewHighScore nhes
         SDL_RenderPresent( gRenderer );
         SDL_Delay(500);
         Mix_PlayMusic(winner, 0);

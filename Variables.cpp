@@ -52,7 +52,7 @@ LButton gButtons[rowSize][columnSize];
 
 string input = " ";
 stringstream mineLeft;
-stringstream TimeOutput;
+string timeOutput;
 string highscoreE[12];
 string highscoreM[12];
 string highscoreH[12];
