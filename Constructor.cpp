@@ -60,7 +60,7 @@ bool loadMedia()
 
     gFontHighScore = TTF_OpenFont( "Font/DTM-Sans.ttf", 40 );
 
-    gFontNameInput = TTF_OpenFont( "Font/DTM-Sans.ttf", 50 );
+    gFontNameInput = TTF_OpenFont( "Font/DTM-Sans.ttf", 40 );
 
     SDL_Color textColor = { 255, 255, 255 };
 
@@ -219,6 +219,7 @@ void close()
     gButtonMenu.free();
     gButtonNewGameMenu.free();
     gTexTureInputName.free();
+    gTimeOutput.free();
 
     for(int i = 0; i < 12; i++)
     {
@@ -235,9 +236,11 @@ void close()
 
     TTF_CloseFont( gFontHighScore );
     TTF_CloseFont( gFontNameInput );
+    TTF_CloseFont( gFontTime );
 
     gFontHighScore = NULL;
     gFontNameInput = NULL;
+    gFontTime = NULL;
 
     Mix_FreeMusic( winner );
     Mix_FreeMusic( loser );

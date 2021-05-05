@@ -48,14 +48,15 @@ void mineManager()
 {
     if ( !gameOver && !isWinning )
     {
-        SDL_Color textColor = { 140, 140, 140, 255 };
+        SDL_Color textColor = { 255, 255, 255 };
         mineLeft.str ( "" );
         mineLeft << "Mine left: " << countMineLeft;
         if( !gMineLeftTexture.loadFromRenderedText( mineLeft.str().c_str(), textColor, gFontNameInput ) )
         {
             cout << "Unable to render mine left texture!\n";
         }
-        gMineLeftTexture.render( ( SCREEN_WIDTH - gMineLeftTexture.getWidth() ) / 2, 0 );
+//        ( SCREEN_WIDTH - gMineLeftTexture.getWidth() ) / 2
+        gMineLeftTexture.render( 30 , 0 );
     }
 }
 

@@ -27,8 +27,20 @@ void count_time(int test_time)
     {
         //cout << test_time << endl;
         ++test_time;
-        SDL_Delay(1000);
+
         // in ra thoi gian nhe minh
+        SDL_Color textColor = { 255, 255, 255 };
+        TimeOutput.str ( "" );
+        TimeOutput << "Time: " << test_time;
+        string Test = "test";
+        if( !gTimeOutput.loadFromRenderedText( Test, textColor, gFontNameInput ) )
+        {
+            cout << "Unable to render mine left texture!\n";
+        }
+//        ( SCREEN_WIDTH - gMineLeftTexture.getWidth() ) / 2
+        gTimeOutput.render( 0 , 0 );
+
+        SDL_Delay(1000);
     }
 
     if ( !gameOver && isWinning && test_time !=0 )

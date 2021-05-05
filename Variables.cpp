@@ -12,6 +12,7 @@ Mix_Chunk *click = NULL;
 
 TTF_Font *gFontHighScore = NULL;
 TTF_Font *gFontNameInput = NULL;
+TTF_Font *gFontTime = NULL;
 
 SDL_Rect gSpriteClips[ BUTTON_SPRITE_TOTAL ];
 LTexture gButtonSpriteSheetTexture;
@@ -23,7 +24,6 @@ LTexture gButtonHighScoreName;
 LTexture gButtonHighscoreDiff;
 LTexture gButtonDifficult;
 LTexture gButtonGameOver;
-
 LTexture gWinningTexture;
 LTexture gBackgroundTexture;
 
@@ -34,6 +34,7 @@ LTexture gTextTextureH[12];
 LTexture gMineLeftTexture;
 LTexture gPlayAgainWinTexture;
 LTexture gPlayAgainLoseTexture;
+LTexture gTimeOutput;
 LTexture gTexTureInputName;
 
 LButton gButtons_;
@@ -51,6 +52,7 @@ LButton gButtons[rowSize][columnSize];
 
 string input = " ";
 stringstream mineLeft;
+stringstream TimeOutput;
 string highscoreE[12];
 string highscoreM[12];
 string highscoreH[12];

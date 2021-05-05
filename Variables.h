@@ -18,6 +18,7 @@ extern Mix_Chunk *click;
 
 extern TTF_Font *gFontHighScore;
 extern TTF_Font *gFontNameInput;
+extern TTF_Font *gFontTime;
 
 extern SDL_Rect stretchRect;
 extern SDL_Rect gSpriteClips[ BUTTON_SPRITE_TOTAL ];
@@ -31,9 +32,9 @@ extern LTexture gButtonHighScoreName;
 extern LTexture gButtonHighscoreDiff;
 extern LTexture gButtonDifficult;
 extern LTexture gButtonGameOver;
-
 extern LTexture gWinningTexture;
 extern LTexture gBackgroundTexture;
+
 extern LTexture gTextTexture;
 extern LTexture gTextTextureE[12];
 extern LTexture gTextTextureM[12];
@@ -41,6 +42,7 @@ extern LTexture gTextTextureH[12];
 extern LTexture gMineLeftTexture;
 extern LTexture gPlayAgainWinTexture;
 extern LTexture gPlayAgainLoseTexture;
+extern LTexture gTimeOutput;
 
 extern LTexture gTexTureInputName;
 
@@ -59,6 +61,7 @@ extern int globalTime;
 
 extern string input;
 extern stringstream mineLeft;
+extern stringstream TimeOutput;
 extern string highscoreE[12];
 extern string highscoreM[12];
 extern string highscoreH[12];
