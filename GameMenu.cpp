@@ -34,7 +34,6 @@ void count_time(int test_time)
     if ( !gameOver && isWinning && test_time !=0 )
     {
         globalTime = test_time;
-        cout << diff << endl;
 
         switch(diff)
         {
@@ -225,7 +224,7 @@ void startGame(bool &quit )
                     {
                         Mix_PlayChannel(-1, click, 0);
                         diff = 2;
-                        mineCount = 20;
+                        mineCount = 2;
                         countMineLeft = mineCount;
                         ok = 3;
                     }
