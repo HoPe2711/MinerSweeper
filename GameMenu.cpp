@@ -76,8 +76,10 @@ void startGame(bool &quit )
             switch(ok)
             {
             case 0:
+
                 if(gButtons_.handleEvent_(&e, 203, 210, 437, 282))
                 {
+                    SDL_RenderClear( gRenderer );
                     Mix_PlayChannel(-1, click, 0);
                     gButtonHighScoreName.render(0,0);
                     saveRender = true;
@@ -88,6 +90,7 @@ void startGame(bool &quit )
                 }
                 else if (gButtons_.handleEvent_(&e, 203, 354, 437, 426))
                 {
+                    SDL_RenderClear( gRenderer );
                     Mix_PlayChannel(-1, click, 0);
                     gButtonHighscoreDiff.render(0, 0);
                     ok = 1;
@@ -96,18 +99,17 @@ void startGame(bool &quit )
                 }
                 else if (gButtons_.handleEvent_(&e, 203, 480, 437, 552))
                 {
-                    Mix_PlayChannel(-1, click, 0);
+                    //Mix_PlayChannel(-1, click, 0);
                     quit = true;
-                    ok = 1;
-                    prev = 3;
                 }
                 break;
             case 1:
+                //SDL_RenderClear( gRenderer );
                 if( prev == 1 )
                 {
-
                     if( gButtons_.handleEvent_(&e, 43, 583, 163, 610) )
                     {
+                        SDL_RenderClear( gRenderer );
                         Mix_PlayChannel(-1, click, 0);
                         ok = 0;
                         gButtonNewGameMenu.render(0, 0);
@@ -156,6 +158,7 @@ void startGame(bool &quit )
                 {
                     if (gButtons_.handleEvent_(&e, 51, 584, 169, 611))
                     {
+                        SDL_RenderClear( gRenderer );
                         Mix_PlayChannel(-1, click, 0);
                         ok = 0;
                         gButtonNewGameMenu.render(0, 0);
@@ -163,6 +166,7 @@ void startGame(bool &quit )
 
                     else if(gButtons_.handleEvent_(&e, 200, 182, 439, 243))
                     {
+                        SDL_RenderClear( gRenderer );
                         Mix_PlayChannel(-1, click, 0);
                         ok = 2;
                         prev = 2;
@@ -171,6 +175,7 @@ void startGame(bool &quit )
                     }
                     else if(gButtons_.handleEvent_(&e, 200, 318, 439, 379))
                     {
+                        SDL_RenderClear( gRenderer );
                         Mix_PlayChannel(-1, click, 0);
                         ok = 2;
                         prev = 2;
@@ -179,6 +184,7 @@ void startGame(bool &quit )
                     }
                     else if( gButtons_.handleEvent_(&e, 200, 448, 439, 510) )
                     {
+                        SDL_RenderClear( gRenderer );
                         Mix_PlayChannel(-1, click, 0);
                         ok = 2;
                         prev = 2;
@@ -189,11 +195,13 @@ void startGame(bool &quit )
 
                 break;
             case 2:
+
                 if( prev == 1 )
                 {
 
                     if( gButtons_.handleEvent_(&e, 51, 584, 169, 611) )
                     {
+                        SDL_RenderClear( gRenderer );
                         Mix_PlayChannel(-1, click, 0);
                         ok = 1;
                         saveRender = true;
@@ -234,6 +242,7 @@ void startGame(bool &quit )
                 {
                     if( gButtons_.handleEvent_(&e, 42, 576, 158, 602) )
                     {
+                        SDL_RenderClear( gRenderer );
                         Mix_PlayChannel(-1, click, 0);
                         ok = 1;
                         gButtonHighscoreDiff.render(0, 0);
@@ -248,7 +257,7 @@ void startGame(bool &quit )
         if( ok == 3 ) break;
         SDL_RenderPresent( gRenderer );
     }
-    thread highscore(count_time, 0);
+    //thread highscore(count_time, 1);
     globalTime = 0;
     while( !quit )
     {
@@ -300,5 +309,5 @@ void startGame(bool &quit )
 
         if(playAgain) break;
     }
-    highscore.join();
+    //highscore.join();
 }
