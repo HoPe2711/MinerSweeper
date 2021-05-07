@@ -125,7 +125,6 @@ void processHighscoreE()
     {
         if (globalTime < valueTimeE[i])
         {
-            HighscoreStatus = true;
             pos = i;
             break;
         }
@@ -163,7 +162,6 @@ void processHighscoreM()
     {
         if (globalTime < valueTimeM[i])
         {
-            HighscoreStatus = true;
             pos = i;
             break;
         }
@@ -202,7 +200,6 @@ void processHighscoreH()
     {
         if (globalTime < valueTimeH[i])
         {
-            HighscoreStatus = true;
             pos = i;
             break;
         }

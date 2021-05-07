@@ -62,8 +62,6 @@ bool loadMedia()
 
     gFontNameInput = TTF_OpenFont( "Font/DTM-Sans.ttf", 40 );
 
-    gFontTime = TTF_OpenFont( "Font/DTM-Sans.ttf", 35 );
-
     SDL_Color textColor = { 255, 255, 255 };
 
     // highscore easy

@@ -64,22 +64,12 @@ void flagManager()
 {
     if ( isWinning && !gameOver)
     {
+        // if statusNewHighScore change render them dong chuc mung ban da co NewHighScore nhes
         SDL_RenderPresent( gRenderer );
         SDL_Delay(500);
         Mix_PlayMusic(winner, 0);
         gWinningTexture.render( 0, 0 , &stretchRect );
 
-        // render chuc mung new highscore
-        if (HighscoreStatus)
-        {
-            SDL_Color textColor = { 255, 255, 255 };
-            newHighscore = "New Highscore! Your Time is: " + convertTime(globalTime);
-            if( !gNewHighscore.loadFromRenderedText( newHighscore, textColor, gFontTime));
-            {
-                cout << "Unable to render new highscore texture!\n";
-            }
-            gNewHighscore.render( (SCREEN_WIDTH - gNewHighscore.getWidth()) / 2 , 20);
-        }
     }
 
     if ( gameOver )

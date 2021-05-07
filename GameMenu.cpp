@@ -99,12 +99,14 @@ void startGame(bool &quit )
                 }
                 else if (gButtons_.handleEvent_(&e, 203, 480, 437, 552))
                 {
-                    //Mix_PlayChannel(-1, click, 0);
+                    Mix_PlayChannel(-1, click, 0);
+                    SDL_Delay(80);
                     quit = true;
+                    return;
                 }
                 break;
             case 1:
-                //SDL_RenderClear( gRenderer );
+
                 if( prev == 1 )
                 {
                     if( gButtons_.handleEvent_(&e, 43, 583, 163, 610) )
@@ -232,7 +234,7 @@ void startGame(bool &quit )
                     {
                         Mix_PlayChannel(-1, click, 0);
                         diff = 2;
-                        mineCount = 2;
+                        mineCount = 20;
                         countMineLeft = mineCount;
                         ok = 3;
                     }
@@ -257,7 +259,7 @@ void startGame(bool &quit )
         if( ok == 3 ) break;
         SDL_RenderPresent( gRenderer );
     }
-    //thread highscore(count_time, 1);
+    thread highscore(count_time, 1);
     globalTime = 0;
     while( !quit )
     {
@@ -309,5 +311,5 @@ void startGame(bool &quit )
 
         if(playAgain) break;
     }
-    //highscore.join();
+    highscore.join();
 }
