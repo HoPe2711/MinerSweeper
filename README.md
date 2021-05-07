@@ -4,5 +4,5 @@
 ### *Nguyễn Tấn Minh - 20020081*
 ***
 * Các thư viện sử dụng : SDL2, SDL2_image, SDL2_ttf, SDL2_mixer
-* Cần Include các thư viện và cài đặt linker, directoris trong setting của codeblock để có thể biên dịch chương trình
+* Cần Include các thư viện và cài đặt linker, directories trong setting của codeblock để có thể biên dịch chương trình
 * Code có tham khảo cách sử dụng các thư viện từ lazyfoo
