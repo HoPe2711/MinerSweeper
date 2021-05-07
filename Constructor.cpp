@@ -68,7 +68,7 @@ bool loadMedia()
     getHighscoreE();
     for(int i = 0; i < 12; i++)
     {
-        if( !gTextTextureE[i].loadFromRenderedText( highscoreE[i], textColor , gFontHighScore) )
+        if( !gTextTextureE[i].loadFromRenderedText( highscoreE[i], textColor, gFontHighScore) )
         {
             cout << "Failed to render highscore easy!\n";
             success = false;
@@ -79,7 +79,7 @@ bool loadMedia()
     getHighscoreM();
     for(int i = 0; i < 12; i++)
     {
-        if( !gTextTextureM[i].loadFromRenderedText( highscoreM[i], textColor ,gFontHighScore) )
+        if( !gTextTextureM[i].loadFromRenderedText( highscoreM[i], textColor,gFontHighScore) )
         {
             cout << "Failed to render highscore meidum!\n";
             success = false;

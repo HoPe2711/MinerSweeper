@@ -22,7 +22,8 @@ int main(int argc, char* argv[])
         else
         {
             bool quit = false;
-            while(!quit) {
+            while(!quit)
+            {
 
                 startGame(quit);
             }

@@ -1,6 +1,7 @@
 #include "Highscore.h"
 
-string convertTime(int time){
+string convertTime(int time)
+{
     int minute = time / 60;
     int sec = time % 60;
     string Stime = "";
@@ -25,7 +26,8 @@ void getHighscoreE()
         cout << "Can not open highscore data";
     }
     int countE = 0, i = 0, j = 0;
-    while (!fileE.eof()){
+    while (!fileE.eof())
+    {
         string line;
         int num;
         if (countE == 18) break;
@@ -59,7 +61,8 @@ void getHighscoreM()
         cout << "Can not open highscore data";
     }
     int countM = 0, i = 0, j = 0;
-    while (!fileM.eof()){
+    while (!fileM.eof())
+    {
         string line;
         int num;
         if (countM == 18) break;
@@ -93,7 +96,8 @@ void getHighscoreH()
         cout << "Can not open highscore data";
     }
     int countH = 0, i = 0, j = 0;
-    while (!fileH.eof()){
+    while (!fileH.eof())
+    {
         string line;
         int num;
         if (countH == 18) break;
@@ -135,7 +139,8 @@ void processHighscoreE()
     fileE.open(pathE, ios::out);
     fileE.seekg(0);
 
-    for (int i=0; i<pos; i++){
+    for (int i=0; i<pos; i++)
+    {
         fileE << highscoreE[i*2] << endl << highscoreE[i*2+1] << endl;
         fileE << valueTimeE[i] << endl;
     }
@@ -143,11 +148,12 @@ void processHighscoreE()
     fileE << input << endl << convertTime(globalTime) << endl;
     fileE << globalTime << endl;
 
-    for (int i=pos; i<5; i++){
+    for (int i=pos; i<5; i++)
+    {
         fileE << highscoreE[i*2] << endl << highscoreE[i*2+1] << endl;
         fileE << valueTimeE[i] << endl;
     }
-     for(int i = 0; i < 12; i++)
+    for(int i = 0; i < 12; i++)
     {
         gTextTextureE[i].free();
     }
@@ -173,7 +179,8 @@ void processHighscoreM()
     fileM.open(pathM, ios::out);
     fileM.seekg(0);
 
-    for (int i=0; i<pos; i++){
+    for (int i=0; i<pos; i++)
+    {
         fileM << highscoreM[i*2] << endl << highscoreM[i*2+1] << endl;
         fileM << valueTimeM[i] << endl;
     }
@@ -181,11 +188,12 @@ void processHighscoreM()
     fileM << input << endl << convertTime(globalTime) << endl;
     fileM << globalTime << endl;
 
-    for (int i=pos; i<5; i++){
+    for (int i=pos; i<5; i++)
+    {
         fileM << highscoreM[i*2] << endl << highscoreM[i*2+1] << endl;
         fileM << valueTimeM[i] << endl;
     }
-     for(int i = 0; i < 12; i++)
+    for(int i = 0; i < 12; i++)
     {
         gTextTextureM[i].free();
     }
@@ -211,7 +219,8 @@ void processHighscoreH()
     fileH.open(pathH, ios::out);
     fileH.seekg(0);
 
-    for (int i=0; i<pos; i++){
+    for (int i=0; i<pos; i++)
+    {
         fileH << highscoreH[i*2] << endl << highscoreH[i*2+1] << endl;
         fileH << valueTimeH[i] << endl;
     }
@@ -219,11 +228,12 @@ void processHighscoreH()
     fileH << input << endl << convertTime(globalTime) << endl;
     fileH << globalTime << endl;
 
-    for (int i=pos; i<5; i++){
+    for (int i=pos; i<5; i++)
+    {
         fileH << highscoreH[i*2] << endl << highscoreH[i*2+1] << endl;
         fileH << valueTimeH[i] << endl;
     }
-     for(int i = 0; i < 12; i++)
+    for(int i = 0; i < 12; i++)
     {
         gTextTextureH[i].free();
     }

@@ -27,7 +27,8 @@ void createTableWithMine ()
     for (int i=0; i<rowSize; i++)
         for (int j=0; j<columnSize; j++)
             if (board[i][j]==9)
-            for (int k=0; k<8; k++){
+                for (int k=0; k<8; k++)
+                {
                     int u = i + directionx[k];
                     int v = j + directiony[k];
                     if (u<rowSize && v<columnSize && u>=0 && v>=0 && board[u][v]!=9) ++board[u][v];
@@ -56,7 +57,7 @@ void mineManager()
             cout << "Unable to render mine left texture!\n";
         }
 //        ( SCREEN_WIDTH - gMineLeftTexture.getWidth() ) / 2
-        gMineLeftTexture.render( 30 , 0 );
+        gMineLeftTexture.render( 30, 0 );
     }
 }
 
@@ -68,7 +69,7 @@ void flagManager()
         SDL_RenderPresent( gRenderer );
         SDL_Delay(500);
         Mix_PlayMusic(winner, 0);
-        gWinningTexture.render( 0, 0 , &stretchRect );
+        gWinningTexture.render( 0, 0, &stretchRect );
 
     }
 

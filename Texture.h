@@ -10,20 +10,20 @@ using namespace std;
 
 class LTexture
 {
-	public:
-		LTexture();
-		~LTexture();
-		bool loadFromRenderedText( string textureText, SDL_Color textColor, TTF_Font* font );
-		bool loadFromFile( string path );
-		void free();
-		void render( int x, int y, SDL_Rect* clip = NULL );
-		int getWidth();
-		int getHeight();
+public:
+    LTexture();
+    ~LTexture();
+    bool loadFromRenderedText( string textureText, SDL_Color textColor, TTF_Font* font );
+    bool loadFromFile( string path );
+    void free();
+    void render( int x, int y, SDL_Rect* clip = NULL );
+    int getWidth();
+    int getHeight();
 
-	private:
-		SDL_Texture* mTexture;
-		int mWidth;
-		int mHeight;
+private:
+    SDL_Texture* mTexture;
+    int mWidth;
+    int mHeight;
 };
 
 
