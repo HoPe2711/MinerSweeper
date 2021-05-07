@@ -70,6 +70,7 @@ void startGame(bool &quit )
             {
                 Mix_PlayChannel(-1, click, 0);
                 quit = true;
+                return;
             }
 
             //Handle button events
@@ -259,7 +260,7 @@ void startGame(bool &quit )
         if( ok == 3 ) break;
         SDL_RenderPresent( gRenderer );
     }
-    thread highscore(count_time, 1);
+    thread highscore(count_time, 0);
     globalTime = 0;
     while( !quit )
     {
