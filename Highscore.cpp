@@ -130,10 +130,10 @@ void processHighscoreE()
         if (globalTime < valueTimeE[i])
         {
             pos = i;
+            statusHighscore = true;
             break;
         }
     }
-
     // if pos < 6  statusNewHighScore change
     fstream fileE;
     fileE.open(pathE, ios::out);
@@ -169,6 +169,7 @@ void processHighscoreM()
         if (globalTime < valueTimeM[i])
         {
             pos = i;
+            statusHighscore = true;
             break;
         }
     }
@@ -209,6 +210,7 @@ void processHighscoreH()
         if (globalTime < valueTimeH[i])
         {
             pos = i;
+            statusHighscore = true;
             break;
         }
     }

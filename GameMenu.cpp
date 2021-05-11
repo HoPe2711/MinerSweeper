@@ -30,24 +30,6 @@ void count_time(int test_time)
         ++test_time;
         globalTime = test_time;
     }
-
-    if ( !gameOver && isWinning && test_time !=0 )
-    {
-        globalTime = test_time;
-
-        switch(diff)
-        {
-        case 0:
-            processHighscoreE();
-            break;
-        case 1:
-            processHighscoreM();
-            break;
-        case 2:
-            processHighscoreH();
-            break;
-        }
-    }
 }
 
 void startGame(bool &quit )
@@ -56,6 +38,7 @@ void startGame(bool &quit )
     int ok = 0;
     int prev = 0;
     playAgain = false;
+    statusHighscore = false;
     SDL_Event e;
     loadHighScore();
     gButtonNewGameMenu.render(0, 0);
@@ -217,7 +200,7 @@ void startGame(bool &quit )
                     {
                         Mix_PlayChannel(-1, click, 0);
                         diff = 0;
-                        mineCount = 10;
+                        mineCount = 2;
                         countMineLeft = mineCount;
                         ok = 3;
                     }
@@ -304,6 +287,22 @@ void startGame(bool &quit )
             }
             gTimeOutput.render( 430, 0 );
             mineManager();
+
+            if ( !gameOver && isWinning)
+            {
+                switch(diff)
+                {
+                case 0:
+                    processHighscoreE();
+                    break;
+                case 1:
+                    processHighscoreM();
+                    break;
+                case 2:
+                    processHighscoreH();
+                    break;
+                }
+            }
             flagManager();
             SDL_RenderPresent( gRenderer );
 

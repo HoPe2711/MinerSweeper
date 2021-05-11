@@ -36,16 +36,17 @@ LTexture gPlayAgainWinTexture;
 LTexture gPlayAgainLoseTexture;
 LTexture gTimeOutput;
 LTexture gTexTureInputName;
+LTexture gNewHighscore;
 
 LButton gButtons_;
 int countMineLeft;
 int countTileLeft = rowSize * columnSize;
+int diff;
+int globalTime;
 bool gameOver = false;
 bool isWinning = false;
 bool playAgain = false;
-time_t start_t, end_t;
-int diff;
-int globalTime;
+bool statusHighscore = false;
 
 int mineCount = 10;
 LButton gButtons[rowSize][columnSize];
@@ -53,6 +54,8 @@ LButton gButtons[rowSize][columnSize];
 string input = " ";
 stringstream mineLeft;
 string timeOutput;
+string newHighscore;
+
 string highscoreE[12];
 string highscoreM[12];
 string highscoreH[12];

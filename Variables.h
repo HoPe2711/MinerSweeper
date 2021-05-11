@@ -43,25 +43,26 @@ extern LTexture gMineLeftTexture;
 extern LTexture gPlayAgainWinTexture;
 extern LTexture gPlayAgainLoseTexture;
 extern LTexture gTimeOutput;
-
 extern LTexture gTexTureInputName;
-
+extern LTexture gNewHighscore;
 
 extern LButton gButtons[rowSize][columnSize];
 extern LButton gButtons_;
 extern int countMineLeft;
 extern int countTileLeft;
-extern bool gameOver;
-extern bool isWinning;
-extern int mineCount;
-extern bool playAgain;
-extern time_t start_t, end_t;
 extern int diff;
 extern int globalTime;
+extern int mineCount;
+extern bool gameOver;
+extern bool isWinning;
+extern bool playAgain;
+extern bool statusHighscore;
 
 extern string input;
 extern stringstream mineLeft;
 extern string timeOutput;
+extern string newHighscore;
+
 extern string highscoreE[12];
 extern string highscoreM[12];
 extern string highscoreH[12];

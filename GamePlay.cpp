@@ -65,12 +65,37 @@ void flagManager()
 {
     if ( isWinning && !gameOver)
     {
-        // if statusNewHighScore change render them dong chuc mung ban da co NewHighScore nhes
         SDL_RenderPresent( gRenderer );
-        SDL_Delay(500);
         Mix_PlayMusic(winner, 0);
         gWinningTexture.render( 0, 0, &stretchRect );
 
+        // render congrat new highscore
+        cout << statusHighscore << endl;
+        if(statusHighscore)
+        {
+            SDL_Color textcolor[8];
+            textcolor[0] = {255, 255, 255};
+            textcolor[1] = {0, 255, 0};
+            textcolor[2] = {255, 0, 255};
+            textcolor[3] = {255, 255, 0};
+            textcolor[4] = {0, 255, 255};
+            textcolor[5] = {0, 255, 0};
+            textcolor[6] = {255, 0, 255};
+            textcolor[7] = {0, 0, 255};
+
+            newHighscore = "New Highscore! " + convertTime(globalTime);
+            for(int i = 0; i < 11; i++)
+            {
+                gNewHighscore.loadFromRenderedText( newHighscore, textcolor[i%8], gFontHighScore);
+                SDL_Delay(500);
+
+                SDL_SetRenderDrawColor( gRenderer, 0xFF, 0xFF, 0xFF, 0xFF );
+                SDL_RenderClear( gRenderer );
+                gWinningTexture.render( 0, 0, &stretchRect );
+                gNewHighscore.render( (SCREEN_WIDTH - gNewHighscore.getWidth()) / 2 , 20);
+                SDL_RenderPresent( gRenderer );
+            }
+        }
     }
 
     if ( gameOver )

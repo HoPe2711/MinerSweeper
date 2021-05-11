@@ -220,6 +220,7 @@ void close()
     gButtonNewGameMenu.free();
     gTexTureInputName.free();
     gTimeOutput.free();
+    gNewHighscore.free();
 
     for(int i = 0; i < 12; i++)
     {
