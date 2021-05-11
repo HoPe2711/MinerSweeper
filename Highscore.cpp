@@ -134,7 +134,7 @@ void processHighscoreE()
             break;
         }
     }
-    // if pos < 6  statusNewHighScore change
+
     fstream fileE;
     fileE.open(pathE, ios::out);
     fileE.seekg(0);
@@ -174,8 +174,6 @@ void processHighscoreM()
         }
     }
 
-    //cout << globalTime << endl;
-
     fstream fileM;
     fileM.open(pathM, ios::out);
     fileM.seekg(0);
@@ -214,8 +212,6 @@ void processHighscoreH()
             break;
         }
     }
-
-    //cout << globalTime << endl;
 
     fstream fileH;
     fileH.open(pathH, ios::out);

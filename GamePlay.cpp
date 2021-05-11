@@ -56,7 +56,7 @@ void mineManager()
         {
             cout << "Unable to render mine left texture!\n";
         }
-//        ( SCREEN_WIDTH - gMineLeftTexture.getWidth() ) / 2
+
         gMineLeftTexture.render( 30, 0 );
     }
 }
@@ -69,8 +69,6 @@ void flagManager()
         Mix_PlayMusic(winner, 0);
         gWinningTexture.render( 0, 0, &stretchRect );
 
-        // render congrat new highscore
-        cout << statusHighscore << endl;
         if(statusHighscore)
         {
             SDL_Color textcolor[8];

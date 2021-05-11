@@ -206,11 +206,11 @@
 	"Variables.h"
 	<fstream>
 
-1620109777 source:c:\users\admin\desktop\codebinh\minersweeper\button.cpp
+1620710886 source:c:\users\admin\desktop\codebinh\minersweeper\button.cpp
 	"Variables.h"
 	<ctime>
 
-1620181289 c:\users\admin\desktop\codebinh\minersweeper\variables.h
+1620710886 c:\users\admin\desktop\codebinh\minersweeper\variables.h
 	<SDL_mixer.h>
 	<sstream>
 	<fstream>
@@ -220,55 +220,55 @@
 	"Button.h"
 	"thread"
 
-1620109777 c:\users\admin\desktop\codebinh\minersweeper\constances.h
+1620710886 c:\users\admin\desktop\codebinh\minersweeper\constances.h
 	"Texture.h"
 	"Button.h"
 	"thread"
 
-1620116594 c:\users\admin\desktop\codebinh\minersweeper\texture.h
+1620710886 c:\users\admin\desktop\codebinh\minersweeper\texture.h
 	<iostream>
 	<SDL.h>
 	<SDL_image.h>
 	<SDL_ttf.h>
 	<cstring>
 
-1620109777 c:\users\admin\desktop\codebinh\minersweeper\button.h
+1620710886 c:\users\admin\desktop\codebinh\minersweeper\button.h
 	"Variables.h"
 
-1620178320 source:c:\users\admin\desktop\codebinh\minersweeper\constructor.cpp
+1620710886 source:c:\users\admin\desktop\codebinh\minersweeper\constructor.cpp
 	"Constructor.h"
 
-1620109777 c:\users\admin\desktop\codebinh\minersweeper\constructor.h
+1620710886 c:\users\admin\desktop\codebinh\minersweeper\constructor.h
 	"Variables.h"
 	"Highscore.h"
 
-1620109777 c:\users\admin\desktop\codebinh\minersweeper\highscore.h
+1620710886 c:\users\admin\desktop\codebinh\minersweeper\highscore.h
 	"Variables.h"
 	<fstream>
 
-1620372779 source:c:\users\admin\desktop\codebinh\minersweeper\gamemenu.cpp
+1620711691 source:c:\users\admin\desktop\codebinh\minersweeper\gamemenu.cpp
 	"GameMenu.h"
 	"Highscore.h"
 	<chrono>
 	<thread>
 
-1620180627 c:\users\admin\desktop\codebinh\minersweeper\gamemenu.h
+1620710886 c:\users\admin\desktop\codebinh\minersweeper\gamemenu.h
 	"Variables.h"
 	"GamePlay.h"
 	<thread>
 
-1620109777 c:\users\admin\desktop\codebinh\minersweeper\gameplay.h
+1620710886 c:\users\admin\desktop\codebinh\minersweeper\gameplay.h
 	"Variables.h"
 	"Highscore.h"
 
-1620182439 source:c:\users\admin\desktop\codebinh\minersweeper\gameplay.cpp
+1620711576 source:c:\users\admin\desktop\codebinh\minersweeper\gameplay.cpp
 	"GamePlay.h"
 	<ctime>
 
-1620182439 source:c:\users\admin\desktop\codebinh\minersweeper\highscore.cpp
+1620711576 source:c:\users\admin\desktop\codebinh\minersweeper\highscore.cpp
 	"Highscore.h"
 
-1620109777 source:c:\users\admin\desktop\codebinh\minersweeper\main.cpp
+1620710886 source:c:\users\admin\desktop\codebinh\minersweeper\main.cpp
 	<iostream>
 	<ctime>
 	<stdlib.h>
@@ -279,10 +279,10 @@
 	"GamePlay.h"
 	"GameMenu.h"
 
-1620116594 source:c:\users\admin\desktop\codebinh\minersweeper\texture.cpp
+1620710886 source:c:\users\admin\desktop\codebinh\minersweeper\texture.cpp
 	"Variables.h"
 
-1620181289 source:c:\users\admin\desktop\codebinh\minersweeper\variables.cpp
+1620710886 source:c:\users\admin\desktop\codebinh\minersweeper\variables.cpp
 	"Variables.h"
 
 1540998018 d:\sdl2_mixer-2.0.4\x86_64-w64-mingw32\include\sdl2\sdl_mixer.h
