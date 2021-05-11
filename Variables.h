@@ -3,7 +3,6 @@
 #include <SDL_mixer.h>
 #include <sstream>
 #include <fstream>
-#include <time.h>
 #include "Constances.h"
 #include "Texture.h"
 #include "Button.h"

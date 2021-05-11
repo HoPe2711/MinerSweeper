@@ -1,5 +1,4 @@
 #include "GamePlay.h"
-#include <ctime>
 
 void createTableWithMine ()
 {
@@ -82,7 +81,7 @@ void flagManager()
             textcolor[7] = {0, 0, 255};
 
             newHighscore = "New Highscore! Time: " + convertTime(globalTime);
-            for(int i = 0; i < 11; i++)
+            for(int i = 0; i < 12; i++)
             {
                 gNewHighscore.loadFromRenderedText( newHighscore, textcolor[i%8], gFontNewHighscore);
                 SDL_Delay(500);
@@ -93,9 +92,11 @@ void flagManager()
                 gNewHighscore.render( (SCREEN_WIDTH - gNewHighscore.getWidth()) / 2, 10);
                 SDL_RenderPresent( gRenderer );
             }
-            gNewHighscore.loadFromRenderedText( newHighscore, textcolor[0], gFontNewHighscore);
+            SDL_SetRenderDrawColor( gRenderer, 0xFF, 0xFF, 0xFF, 0xFF );
+            SDL_RenderClear( gRenderer );
             gWinningTexture.render( 0, 0, &stretchRect );
             gNewHighscore.render( (SCREEN_WIDTH - gNewHighscore.getWidth()) / 2, 10);
+            SDL_RenderPresent( gRenderer );
         }
     }
 

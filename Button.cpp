@@ -1,5 +1,4 @@
 #include "Variables.h"
-#include <ctime>
 
 void reveal(int i, int j)
 {
