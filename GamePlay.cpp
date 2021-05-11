@@ -63,7 +63,7 @@ void mineManager()
 
 void flagManager()
 {
-    if ( isWinning && !gameOver)
+    if ( isWinning && !gameOver )
     {
         SDL_RenderPresent( gRenderer );
         Mix_PlayMusic(winner, 0);
@@ -81,18 +81,21 @@ void flagManager()
             textcolor[6] = {255, 0, 255};
             textcolor[7] = {0, 0, 255};
 
-            newHighscore = "New Highscore! " + convertTime(globalTime);
+            newHighscore = "New Highscore! Time: " + convertTime(globalTime);
             for(int i = 0; i < 11; i++)
             {
-                gNewHighscore.loadFromRenderedText( newHighscore, textcolor[i%8], gFontHighScore);
+                gNewHighscore.loadFromRenderedText( newHighscore, textcolor[i%8], gFontNewHighscore);
                 SDL_Delay(500);
 
                 SDL_SetRenderDrawColor( gRenderer, 0xFF, 0xFF, 0xFF, 0xFF );
                 SDL_RenderClear( gRenderer );
-                gWinningTexture.render( 0, 0, &stretchRect );
-                gNewHighscore.render( (SCREEN_WIDTH - gNewHighscore.getWidth()) / 2 , 20);
+                gNewHighscoreBackground.render( 0, 0 );
+                gNewHighscore.render( (SCREEN_WIDTH - gNewHighscore.getWidth()) / 2, 10);
                 SDL_RenderPresent( gRenderer );
             }
+            gNewHighscore.loadFromRenderedText( newHighscore, textcolor[0], gFontNewHighscore);
+            gWinningTexture.render( 0, 0, &stretchRect );
+            gNewHighscore.render( (SCREEN_WIDTH - gNewHighscore.getWidth()) / 2, 10);
         }
     }
 

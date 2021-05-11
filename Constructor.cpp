@@ -36,11 +36,13 @@ bool init()
                     cout << "SDL_image could not initialize! SDL_image Error: " << IMG_GetError() << endl;
                     success = false;
                 }
+
                 if( Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 2048 ) < 0 )
                 {
                     cout << "SDL_mixer could not initialize! SDL_mixer Error: " << Mix_GetError() << endl;
                     success = false;
                 }
+
                 if( TTF_Init() == -1 )
                 {
                     cout << "SDL_ttf could not initialize! SDL_ttf Error: " << TTF_GetError() << endl;
@@ -62,9 +64,11 @@ bool loadMedia()
 
     gFontNameInput = TTF_OpenFont( "Font/DTM-Sans.ttf", 40 );
 
+    gFontNewHighscore = TTF_OpenFont( "Font/DTM-Sans.ttf", 45
+                                    );
+
     SDL_Color textColor = { 255, 255, 255 };
 
-    // highscore easy
     getHighscoreE();
     for(int i = 0; i < 12; i++)
     {
@@ -75,7 +79,6 @@ bool loadMedia()
         }
     }
 
-    // highscore medium
     getHighscoreM();
     for(int i = 0; i < 12; i++)
     {
@@ -86,8 +89,6 @@ bool loadMedia()
         }
     }
 
-    // highscore hard
-
     getHighscoreH();
     for(int i = 0; i < 12; i++)
     {
@@ -97,8 +98,6 @@ bool loadMedia()
             success = false;
         }
     }
-
-    //
 
     if( !gButtonNewGameMenu.loadFromFile( "Image/MenuNewgame.jpg" ) )
     {
@@ -158,6 +157,13 @@ bool loadMedia()
         cout << "Failed to load Tiles!\n";
         success = false;
     }
+
+    if( !gNewHighscoreBackground.loadFromFile( "Image/NewHighscore_.jpg" ) )
+    {
+        cout << "Failed to load Tiles!\n";
+        success = false;
+    }
+
     else
     {
         for( int i = 0; i < BUTTON_SPRITE_TOTAL; i++ )
@@ -200,9 +206,6 @@ bool loadMedia()
     return success;
 }
 
-void closeScore()
-{
-}
 void close()
 {
     gButtonSpriteSheetTexture.free();
@@ -221,6 +224,7 @@ void close()
     gTexTureInputName.free();
     gTimeOutput.free();
     gNewHighscore.free();
+    gNewHighscoreBackground.free();
 
     for(int i = 0; i < 12; i++)
     {
@@ -237,11 +241,11 @@ void close()
 
     TTF_CloseFont( gFontHighScore );
     TTF_CloseFont( gFontNameInput );
-    TTF_CloseFont( gFontTime );
+    TTF_CloseFont( gFontNewHighscore );
 
     gFontHighScore = NULL;
     gFontNameInput = NULL;
-    gFontTime = NULL;
+    gFontNewHighscore = NULL;
 
     Mix_FreeMusic( winner );
     Mix_FreeMusic( loser );

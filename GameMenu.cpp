@@ -200,7 +200,7 @@ void startGame(bool &quit )
                     {
                         Mix_PlayChannel(-1, click, 0);
                         diff = 0;
-                        mineCount = 2;
+                        mineCount = 10;
                         countMineLeft = mineCount;
                         ok = 3;
                     }
@@ -247,7 +247,6 @@ void startGame(bool &quit )
     globalTime = 0;
     while( !quit )
     {
-
         createTableWithMine();
         while ( !gameOver && !quit && !isWinning)
         {
@@ -287,7 +286,6 @@ void startGame(bool &quit )
             }
             gTimeOutput.render( 430, 0 );
             mineManager();
-
             if ( !gameOver && isWinning)
             {
                 switch(diff)

@@ -22,9 +22,8 @@ void getHighscoreE()
     fstream fileE;
     fileE.open(pathE, ios::in);
     if(!fileE)
-    {
         cout << "Can not open highscore data";
-    }
+
     int countE = 0, i = 0, j = 0;
     while (!fileE.eof())
     {
@@ -57,9 +56,8 @@ void getHighscoreM()
     fstream fileM;
     fileM.open(pathM, ios::in);
     if(!fileM)
-    {
         cout << "Can not open highscore data";
-    }
+
     int countM = 0, i = 0, j = 0;
     while (!fileM.eof())
     {
@@ -92,9 +90,8 @@ void getHighscoreH()
     fstream fileH;
     fileH.open(pathH, ios::in);
     if(!fileH)
-    {
         cout << "Can not open highscore data";
-    }
+
     int countH = 0, i = 0, j = 0;
     while (!fileH.eof())
     {
