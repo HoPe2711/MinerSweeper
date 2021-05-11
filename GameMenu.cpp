@@ -200,7 +200,7 @@ void startGame(bool &quit )
                     {
                         Mix_PlayChannel(-1, click, 0);
                         diff = 0;
-                        mineCount = 2;
+                        mineCount = 10;
                         countMineLeft = mineCount;
                         ok = 3;
                     }

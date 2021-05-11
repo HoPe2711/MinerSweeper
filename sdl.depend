@@ -89,16 +89,15 @@
 	"Variables.h"
 	"Highscore.h"
 
-1620754397 source:g:\code\ltnc_btl\minersweeper\gameplay.cpp
+1620754912 source:g:\code\ltnc_btl\minersweeper\gameplay.cpp
 	"GamePlay.h"
 
 1620704516 g:\code\ltnc_btl\minersweeper\gameplay.h
 	"Variables.h"
 	"Highscore.h"
 
-1620701157 source:g:\code\ltnc_btl\minersweeper\main.cpp
+1620754912 source:g:\code\ltnc_btl\minersweeper\main.cpp
 	<iostream>
-	<ctime>
 	<stdlib.h>
 	<sstream>
 	<string>
@@ -185,7 +184,7 @@
 	<chrono>
 	<thread>
 
-1620734187 source:g:\code\ltnc_btl\minersweeper\gamemenu.cpp
+1620754583 source:g:\code\ltnc_btl\minersweeper\gamemenu.cpp
 	"GameMenu.h"
 	"Highscore.h"
 	<chrono>
