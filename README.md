@@ -20,4 +20,3 @@
 * Game gồm 8 file cpp và 9 file header, được hoàn thành trong 7 tuần.
 
 cuongdc@vnu.edu.vn
-ten tac gia, dung thu vien gi, bao nhieu dong code, bao nhieu tgian, phan cong cong viec nhu nao, … cang chi tiet cang tot
