@@ -196,7 +196,7 @@ bool loadMedia()
         success = false;
     }
 
-    theme_ost = Mix_LoadMUS( "Sounds/theme_ost.mp3");
+    theme_ost = Mix_LoadMUS( "Sounds/Open.mid");
 
     if( theme_ost == NULL )
     {

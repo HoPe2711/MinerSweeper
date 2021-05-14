@@ -96,7 +96,6 @@ void flagManager()
             SDL_RenderClear( gRenderer );
             gWinningTexture.render( 0, 0, &stretchRect );
             gNewHighscore.render( (SCREEN_WIDTH - gNewHighscore.getWidth()) / 2, 10);
-            SDL_RenderPresent( gRenderer );
         }
     }
 
