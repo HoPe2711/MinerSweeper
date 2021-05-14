@@ -8,6 +8,7 @@ SDL_Rect stretchRect = {0,0,SCREEN_WIDTH,SCREEN_HEIGHT};
 
 Mix_Music *winner = NULL;
 Mix_Music *loser = NULL;
+Mix_Music *theme_ost = NULL;
 Mix_Chunk *click = NULL;
 
 TTF_Font *gFontHighScore = NULL;

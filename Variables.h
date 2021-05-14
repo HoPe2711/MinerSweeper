@@ -13,6 +13,7 @@ extern SDL_Renderer* gRenderer;
 
 extern Mix_Music *winner;
 extern Mix_Music *loser;
+extern Mix_Music *theme_ost;
 extern Mix_Chunk *click;
 
 extern TTF_Font *gFontHighScore;

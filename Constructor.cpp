@@ -196,6 +196,14 @@ bool loadMedia()
         success = false;
     }
 
+    theme_ost = Mix_LoadMUS( "Sounds/theme_ost.mp3");
+
+    if( theme_ost == NULL )
+    {
+        cout << "Failed to load theme sound effect! SDL_mixer Error: " << Mix_GetError() << endl;
+        success = false;
+    }
+
     click = Mix_LoadWAV( "Sounds/click.wav" );
     if( click == NULL )
     {
@@ -250,6 +258,7 @@ void close()
     Mix_FreeMusic( winner );
     Mix_FreeMusic( loser );
     Mix_FreeChunk( click );
+    Mix_FreeMusic( theme_ost );
     winner = NULL;
     loser = NULL;
     click = NULL;

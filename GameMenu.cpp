@@ -43,6 +43,7 @@ void startGame(bool &quit )
     loadHighScore();
     gButtonNewGameMenu.render(0, 0);
     bool saveRender = true;
+    Mix_PlayMusic(theme_ost, 1);
     while( !quit )
     {
         while( SDL_PollEvent( &e ) != 0 )
@@ -245,6 +246,7 @@ void startGame(bool &quit )
     }
     thread highscore(count_time, 0);
     globalTime = 0;
+    Mix_HaltMusic( );
     while( !quit )
     {
         createTableWithMine();
