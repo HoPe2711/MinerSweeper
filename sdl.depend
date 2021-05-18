@@ -55,10 +55,10 @@
 1615536348 source:c:\users\admin\desktop\codebinh\sdl\variables.cpp
 	"Variables.h"
 
-1620753638 source:g:\code\ltnc_btl\minersweeper\button.cpp
+1621310130 source:g:\code\ltnc_btl\minersweeper\button.cpp
 	"Variables.h"
 
-1620753638 g:\code\ltnc_btl\minersweeper\variables.h
+1621310130 g:\code\ltnc_btl\minersweeper\variables.h
 	<SDL_mixer.h>
 	<sstream>
 	<fstream>
@@ -67,36 +67,36 @@
 	"Button.h"
 	"thread"
 
-1620701157 g:\code\ltnc_btl\minersweeper\constances.h
+1621310130 g:\code\ltnc_btl\minersweeper\constances.h
 	"Texture.h"
 	"Button.h"
 	"thread"
 
-1620701157 g:\code\ltnc_btl\minersweeper\texture.h
+1621310130 g:\code\ltnc_btl\minersweeper\texture.h
 	<iostream>
 	<SDL.h>
 	<SDL_image.h>
 	<SDL_ttf.h>
 	<cstring>
 
-1620701157 g:\code\ltnc_btl\minersweeper\button.h
+1621310130 g:\code\ltnc_btl\minersweeper\button.h
 	"Variables.h"
 
-1620733976 source:g:\code\ltnc_btl\minersweeper\constructor.cpp
+1621310130 source:g:\code\ltnc_btl\minersweeper\constructor.cpp
 	"Constructor.h"
 
-1620701157 g:\code\ltnc_btl\minersweeper\constructor.h
+1621310130 g:\code\ltnc_btl\minersweeper\constructor.h
 	"Variables.h"
 	"Highscore.h"
 
-1620754912 source:g:\code\ltnc_btl\minersweeper\gameplay.cpp
+1621310130 source:g:\code\ltnc_btl\minersweeper\gameplay.cpp
 	"GamePlay.h"
 
-1620704516 g:\code\ltnc_btl\minersweeper\gameplay.h
+1621310130 g:\code\ltnc_btl\minersweeper\gameplay.h
 	"Variables.h"
 	"Highscore.h"
 
-1620754912 source:g:\code\ltnc_btl\minersweeper\main.cpp
+1621310130 source:g:\code\ltnc_btl\minersweeper\main.cpp
 	<iostream>
 	<stdlib.h>
 	<sstream>
@@ -106,10 +106,10 @@
 	"GamePlay.h"
 	"GameMenu.h"
 
-1620701157 source:g:\code\ltnc_btl\minersweeper\texture.cpp
+1621310130 source:g:\code\ltnc_btl\minersweeper\texture.cpp
 	"Variables.h"
 
-1620733976 source:g:\code\ltnc_btl\minersweeper\variables.cpp
+1621310130 source:g:\code\ltnc_btl\minersweeper\variables.cpp
 	"Variables.h"
 
 1620987085 source:e:\code\code_codeblocks\practise_code\sdl\minersweeper\button.cpp
@@ -180,21 +180,21 @@
 	<chrono>
 	<thread>
 
-1620754583 source:g:\code\ltnc_btl\minersweeper\gamemenu.cpp
+1621310130 source:g:\code\ltnc_btl\minersweeper\gamemenu.cpp
 	"GameMenu.h"
 	"Highscore.h"
 	<chrono>
 	<thread>
 
-1620701157 g:\code\ltnc_btl\minersweeper\gamemenu.h
+1621310130 g:\code\ltnc_btl\minersweeper\gamemenu.h
 	"Variables.h"
 	"GamePlay.h"
 	<thread>
 
-1620733958 source:g:\code\ltnc_btl\minersweeper\highscore.cpp
+1621310130 source:g:\code\ltnc_btl\minersweeper\highscore.cpp
 	"Highscore.h"
 
-1620701157 g:\code\ltnc_btl\minersweeper\highscore.h
+1621310130 g:\code\ltnc_btl\minersweeper\highscore.h
 	"Variables.h"
 	<fstream>
 
