@@ -7,8 +7,8 @@
 * Vẽ đồ họa + xử lí hình ảnh trong menu (2 tuần)
 ***
 ### *Tính năng của game: trò chơi dò mìn cơ bản được bổ sung các tính năng sau*
-* Game có menu đẹp, nhiều tính năng
-* Chia ra thành 3 mức độ khó: easy (10 mìn), medium (15 mìn), hard (20 mìn)
+* Game có đồ họa đẹp, nhiều tính năng
+* Chia ra thành 3 mức độ: easy (10 mìn), medium (15 mìn), hard (20 mìn)
 * Đo thời gian của người chơi
 * Nhập tên người chơi
 * Lưu tên người chơi và thời gian chơi vào bảng highscore (chia theo độ khó) 
