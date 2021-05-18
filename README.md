@@ -20,4 +20,3 @@
 * Code có tham khảo cách sử dụng các thư viện từ lazyfoo
 * Game gồm 8 file cpp và 9 file header, được hoàn thành trong 7 tuần.
 
-cuongdc@vnu.edu.vn
