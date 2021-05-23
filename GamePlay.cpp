@@ -84,19 +84,18 @@ void flagManager()
             for(int i = 0; i < 12; i++)
             {
                 gNewHighscore.loadFromRenderedText( newHighscore, textcolor[i%8], gFontNewHighscore);
-                SDL_Delay(500);
-
                 SDL_SetRenderDrawColor( gRenderer, 0xFF, 0xFF, 0xFF, 0xFF );
                 SDL_RenderClear( gRenderer );
                 gNewHighscoreBackground.render( 0, 0 );
                 gNewHighscore.render( (SCREEN_WIDTH - gNewHighscore.getWidth()) / 2, 10);
                 SDL_RenderPresent( gRenderer );
+                SDL_Delay(500);
             }
             SDL_SetRenderDrawColor( gRenderer, 0xFF, 0xFF, 0xFF, 0xFF );
             SDL_RenderClear( gRenderer );
             gWinningTexture.render( 0, 0, &stretchRect );
             gNewHighscore.render( (SCREEN_WIDTH - gNewHighscore.getWidth()) / 2, 10);
-            SDL_Delay(100);
+            SDL_Delay(200);
         }
     }
 
